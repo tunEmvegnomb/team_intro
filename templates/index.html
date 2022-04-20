@@ -4,282 +4,24 @@
     <meta charset="UTF-8">
     <title>팀 올드보이</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Dalgona/neodgm-webfont@1.510/neodgm/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Dalgona/neodgm-webfont@1.510/neodgm_code/style.css">
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/js.js"></script>
+
+
+
     <script>
-        $(document).ready(function () {
 
-            let today = new Date();
-            let hours = today.getHours();
-            console.log(hours)
-
-
-            // 기능설계
-            // MP부터 닳고 HP닳기
-            // 총 10칸을 9시부터 1시간 간격으로 닳게 하기
-            // 점심과 저녁시간 빼기
-            // removeClass, addClass 활용
-
-            // MP부터 10시부터~15시까지
-
-            if (hours >= 10 && hours <= 11) {
-                $('.mp_bar').removeClass('mp_4').addClass('mp_3')
-            } else if (hours >= 11 && hours <= 12) {
-                $('.mp_bar').removeClass('mp_3').addClass('mp_3')
-            } else if (hours >= 12 && hours <= 13) {
-                $('.mp_bar').removeClass('mp_2').addClass('mp_1')
-            } else if (hours >= 14 && hours <= 15) {
-                $('.mp_bar').removeClass('mp_1').addClass('mp_0')
-            }
-
-            // HP 15시부터~21시까지
-            else if (hours >= 15 && hours <= 16) {
-                $('.hp_bar').removeClass('hp_4').addClass('hp_3')
-            } else if (hours >= 16 && hours <= 17) {
-                $('.hp_bar').removeClass('hp_3').addClass('hp_2')
-            } else if (hours >= 17 && hours <= 18) {
-                $('.hp_bar').removeClass('hp_2').addClass('hp_1')
-            } else if (hours >= 19 && hours <= 20) {
-                $('.hp_bar').removeClass('hp_1').addClass('hp_0')
-
-            } else {
-                $('.hp_bar').removeClass('hp_1').addClass('hp_0')
-                $('.mp_bar').removeClass('mp_1').addClass('mp_0')
-            }
-
-        })
 
     </script>
 </head>
 <style>
-    * {
-        color: white;
-    }
-
-    body {
-        background-color: black;
-        height: 20000px;
-    }
-
-    @font-face {
-        src: url("../static/font/Ugly Byte Free Trial-80da.woff") format("woff"),
-        url("../static/font/Ugly Byte Free Trial-d5a7.woff2") format("woff2");
-        font-family: "ugly";
-    }
-
-    .text_box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    }
-
-    .old_Boy {
-        overflow: hidden;
-        position: relative;
-        font-family: 'ugly';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 200px;
-        line-height: 180px;
-        color: #FFFFFF;
-    }
-
-    .flex {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .stageimg {
-        width: 100vw;
-        height: 150px;
-    }
-
-    .fixed {
-        position: fixed;
-        bottom: 0;
-    }
-
-    .charimg {
-        width: 170px;
-        height: 170px;
-    }
-
-    .wrap_teamIntro, .wrap_teamGoal, .wrap_teamRule, .wrap_Member {
-        margin: 1000px auto;
-        width: 1300px;
-        height: 1000px;
-        background-color: grey;
-    }
-
-    .img_team, .img_member {
-        background-color: green;
-        width: 300px;
-        height: 400px;
-        margin: 70px 0 0 144px;
-    }
-
-    .content_team {
-        display: flex;
-    }
-
-    .title_team {
-        background-color: red;
-        width: 400px;
-        height: 100px;
-        margin: 70px 0 0 250px;
-    }
-
-    .desc_team {
-        background-color: blue;
-        width: 800px;
-        height: 400px;
-        margin: 50px auto 50px auto;
-    }
-
-    .title_member {
-        background-color: aqua;
-        width: 400px;
-        height: 50px;
-        margin: 20px auto;
-    }
-
-    .name_member {
-        background-color: blueviolet;
-        width: 600px;
-        height: 50px;
-        margin: 40px auto;
-    }
-
-    .content_member {
-        margin-top: 70px;
-        display: flex;
-    }
-
-    .desc_member {
-        background-color: darkorange;
-        width: 500px;
-        margin: 70px 0 0 130px;
-    }
-
-    /* 멤버카드 우하단 아이콘 */
-    .icon_member {
 
 
-        float: right;
-        width: 100px;
-        height: 100px;
-        margin: 0 70px;
-
-    }
-    .blog_link {
-        width: 170px;
-        height: 170px;
-    }
-    /*3D Rotate 구현*/
-
-    .card_box {
-        width: 300px;
-        height: 400px;
-        margin: 70px 0 0 144px;
-
-        /*perspective: 300px;*/
-    }
-
-    .card_box .item {
-        width: 300px;
-        height: 400px;
-        border: 1px solid #828282;
-        font-size: 35px;
-        backface-visibility: hidden;
-        transition: 1.5s;
-    }
-
-    .card_box .item.front {
-        position: absolute;
-        transform: rotateY(0deg);
-    }
-
-    .card_box:hover .item.front {
-        transform: rotateY(180deg);
-    }
-
-    .card_box .item.back {
-        transform: rotateY(-180deg);
-    }
-
-    .card_box:hover .item.back {
-        transform: rotateY(0deg);
-    }
-
-    .hp_bar {
-        width: 300px;
-        height: 50px;
-        margin: 5px 0 0 144px;
-
-        /* div 이미지 넣기 */
-        background-image: url("../static/image/hp_4.png");
-        background-position: center;
-        background-size: cover;
-    }
-
-    .mp_bar {
-        width: 300px;
-        height: 50px;
-        margin: 5px 0 0 144px;
-
-        /* div 이미지 넣기 */
-        background-image: url('../static/image/mp_4.png');
-        background-position: center;
-        background-size: cover;
-    }
-
-    .stageimg, .charimg {
-        z-index: 3
-    }
-
-    .item {
-        z-index: 1
-    }
-
-    /*  백그라운드 이미지 넣기 용도  */
-    .hp_1 {
-        background-image: url('../static/image/hp_1.png');
-    }
-
-    .hp_2 {
-        background-image: url('../static/image/hp_2.png');
-    }
-
-    .hp_3 {
-        background-image: url('../static/image/hp_3.png');
-    }
-
-    .hp_4 {
-        background-image: url('../static/image/hp_4.png');
-    }
-
-    .hp_0 {
-        background-image: url('../static/image/hp_0.png');
-    }
-
-    .mp_1 {
-        background-image: url('../static/image/mp_1.png');
-    }
-
-    .mp_2 {
-        background-image: url('../static/image/mp_2.png');
-    }
-
-    .mp_3 {
-        background-image: url('../static/image/mp_3.png');
-    }
-
-    .mp_4 {
-        background-image: url('../static/image/mp_4.png');
-    }
-
-    .mp_0 {
-        background-image: url('../static/image/mp_0.png');
-    }
 </style>
 
 
@@ -312,11 +54,14 @@
             IMG
         </div>
         <div class="title_team">
-            부제
+            <h2 style="font-size: 50px;">팀 올드보이 소개</h2>
         </div>
     </div>
     <div class="desc_team">
-        팀 설명
+        <li>진한 아재미를 물씬 풍기는 중후한 매력의 팀입니다</li>
+        <li>조용한 듯 보이지만, 잘 웃습니다!</li>
+        <li>목표수행에 있어서는 근성의 사나이들입니다!</li>
+        <li>홈 쿠킹이 저희의 공통점인만큼 다정다감 합니다 ^~^</li>
     </div>
 </div>
 
@@ -327,11 +72,14 @@
             IMG
         </div>
         <div class="title_team">
-            부제
+            <h2 style="font-size: 50px;">팀 올드보이 목표</h2>
         </div>
     </div>
     <div class="desc_team">
-        팀 설명
+        <li>팀 올드보이는 수료까지</li>
+        <li>서비스를 제작부터 운영, 관리할 수 있는</li>
+        <li>역량을 길러내는 것을!</li>
+        <li>궁극적인 목표로 삼고 함께 협업하고 있습니다!</li>
     </div>
 </div>
 
@@ -342,11 +90,16 @@
             IMG
         </div>
         <div class="title_team">
-            부제
+            <h2 style="font-size: 50px;">팀 올드보이 규칙</h2>
         </div>
     </div>
     <div class="desc_team">
-        팀 설명
+        <div class="desc_team">
+        <li>12시간을 기본으로, 넘어가도 계속 코딩하기!</li>
+        <li>서로를 배려하는 언행을 기억하기!</li>
+        <li>개인일정은 사전에 꼭 공지하기!</li>
+
+    </div>
     </div>
 </div>
 
@@ -371,8 +124,9 @@
     <div class="hp_bar"></div>
     <div class="mp_bar"></div>
 
-    <div class="icon_member" >
-       <a href = "https://medium.com/@about.joo91" target='_blank'><img class="blog_link" src="../static/image/snobro.png"> </a>
+    <div class="icon_member">
+        <a href="https://medium.com/@about.joo91" target='_blank'><img class="blog_link"
+                                                                       src="../static/image/snobro.png"> </a>
     </div>
 </div>
 
@@ -395,8 +149,8 @@
     </div>
     <div class="hp_bar"></div>
     <div class="mp_bar"></div>
-    <div class="icon_member" >
-       <a href = "https://velog.io/@psjlmk" target='_blank'><img class="blog_link" src="../static/image/iori.png"> </a>
+    <div class="icon_member">
+        <a href="https://velog.io/@psjlmk" target='_blank'><img class="blog_link" src="../static/image/iori.png"> </a>
     </div>
 </div>
 
@@ -419,8 +173,9 @@
     </div>
     <div class="hp_bar"></div>
     <div class="mp_bar"></div>
-    <div class="icon_member" >
-       <a href = "https://github.com/haajinkim/Record_blog" target='_blank'><img class="blog_link" src="../static/image/mario.png"> </a>
+    <div class="icon_member">
+        <a href="https://github.com/haajinkim/Record_blog" target='_blank'><img class="blog_link"
+                                                                                src="../static/image/mario.png"> </a>
     </div>
 </div>
 
@@ -443,8 +198,9 @@
     </div>
     <div class="hp_bar"></div>
     <div class="mp_bar"></div>
-    <div class="icon_member" >
-       <a href = "http://goldvedio.tistory.com" target='_blank'><img class="blog_link" src="../static/image/phantom.png"> </a>
+    <div class="icon_member">
+        <a href="http://goldvedio.tistory.com" target='_blank'><img class="blog_link" src="../static/image/phantom.png">
+        </a>
     </div>
 </div>
 
@@ -452,28 +208,6 @@
 </div>
 
 <script>
-    function goToScroll_joo() {
-        var location = document.querySelector("#joo").offsetTop;
-        console.log(location)
-        window.scrollTo({top: location, behavior: 'smooth'});
-    }
 
-    function goToScroll_lee() {
-        var location = document.querySelector("#lee").offsetTop;
-        console.log(location)
-        window.scrollTo({top: location, behavior: 'smooth'});
-    }
-
-    function goToScroll_kim() {
-        var location = document.querySelector("#kim").offsetTop;
-        console.log(location)
-        window.scrollTo({top: location, behavior: 'smooth'});
-    }
-
-    function goToScroll_hwang() {
-        var location = document.querySelector("#hwang").offsetTop;
-        console.log(location)
-        window.scrollTo({top: location, behavior: 'smooth'});
-    }
 </script>
 </body>
