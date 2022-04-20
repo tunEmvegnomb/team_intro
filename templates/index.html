@@ -10,30 +10,19 @@
             let today = new Date();
             let hours = today.getHours();
 
-            // if (hours >= 7 && hours <= 9) {
-            //     $('.hp_bar').attr('src', '../static/image/hp_4.png');
-            //     // $(".hp_bar").text("100")
-            //     $('.mp_bar').css('width', '85%');
-            //     $(".mp_bar").text("85")
-            // }
-            // else if (hours >= 10 && hours <= 13) {
-            //     $('.hp_bar').css('width', '55%');
-            //     $(".hp_bar").text("55")
-            //     $('.mp_bar').css('width', '45%');
-            //     $(".mp_bar").text("45")
-            // }
-            // else if (hours >= 14 && hours <= 17) {
-            //     // $('.hp_bar').css('width', '35%');
-            //     $(".hp_bar").text("35")
-            //     // $('.mp_bar').css('width', '25%');
-            //     $(".mp_bar").text("25")
-            // }
-            // else {
-            //     // $('.hp_bar').css('width', "15%");
-            //     $(".hp_bar").text("15")
-            //     // $('.mp_bar').css('width', '5%');
-            //     $(".mp_bar").text("5")
-            // }
+            if (hours >= 7 && hours <= 9) {
+                $('.hp_bar').attr('src', '../static/image/hp_4.png');
+                $('.mp_bar').attr('src', '../static/image/mp_4.png');
+            } else if (hours >= 10 && hours <= 13) {
+                $('.hp_bar').attr('src', '../static/image/hp_3.png');
+                $('.mp_bar').attr('src', '../static/image/mp_3.png');
+            } else if (hours >= 14 && hours <= 17) {
+                $('.hp_bar').attr('src', '../static/image/hp_2.png');
+                $('.mp_bar').attr('src', '../static/image/mp_2.png');
+            } else {
+                $('.hp_bar').attr('src', '../static/image/hp_1.png');
+                $('.mp_bar').attr('src', '../static/image/mp_1.png');
+            }
 
         })
 
@@ -85,7 +74,7 @@
 
     .fixed {
         position: fixed;
-        bottom: 0px;
+        bottom: 0;
     }
 
     .charimg {
@@ -193,18 +182,37 @@
     .card_box:hover .item.back {
         transform: rotateY(0deg);
     }
+
     .hp_bar {
         width: 300px;
-        height: 30px;
-        background-color: red;
-        margin: 20px 0 0 144px;
+        height: 50px;
+        margin: 5px 0 0 144px;
+
+        /* div 이미지 넣기 */
+        background-image: url("../static/image/hp_4.png");
+        background-position: center;
+        background-size: cover;
     }
-    .mp_bar{
-        background-color: blue;
+
+    .mp_bar {
         width: 300px;
-        height: 30px;
-        margin: 10px 0 0 144px;
+        height: 50px;
+        margin: 5px 0 0 144px;
+
+        /* div 이미지 넣기 */
+        background-image: url('../static/image/mp_4.png');
+        background-position: center;
+        background-size: cover;
     }
+
+    .stageimg, .charimg {
+        z-index: 3
+    }
+
+    .item {
+        z-index: 1
+    }
+
 </style>
 
 
@@ -277,105 +285,93 @@
 
 <a id="joo"></a>
 <div class="wrap_Member">
-        멤버카드 주정한
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">주정한, 자유로운 영혼</div>
-        <div class="content_member">
-            <!-- 300x400 -->
-            <div class="card_box">
-                <div class="item front"><img src="../static/image/snowb.png"></div>
-                <div class="item back"><img src="../static/image/entp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+    멤버카드 주정한
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">주정한, 자유로운 영혼</div>
+    <div class="content_member">
+        <!-- 300x400 -->
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/snowb.png"></div>
+            <div class="item back"><img src="../static/image/entp.png"></div>
         </div>
-            <div class="hp_bar" ></div>
-            <div class="mp_bar" ></div>
-
-        <div class="icon_member">Blog Link ICON</div>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p><a href="github.com">스테이터스 확인</a></p>
+        </div>
     </div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+
+    <div class="icon_member">Blog Link ICON</div>
+</div>
 
 <a id="lee"></a>
 <div class="wrap_Member">
-        멤버카드 이민기
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">주정한, 자유로운 영혼</div>
-        <div class="content_member">
-            <div class="card_box">
-                <div class="item front"><img src="../static/image/iori.jpg"></div>
-                <div class="item back"><img src="../static/image/enfp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+    멤버카드 이민기
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">주정한, 자유로운 영혼</div>
+    <div class="content_member">
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/iori.jpg"></div>
+            <div class="item back"><img src="../static/image/enfp.png"></div>
         </div>
-        <div class="bar">
-            <div  class="hp_bar">100</div>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p><a href="github.com">스테이터스 확인</a></p>
         </div>
-        <div class="bar">
-            <div  class="mp_bar">100</div>
-        </div>
-        <div class="icon_member">Blog Link ICON</div>
     </div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+    <div class="icon_member">Blog Link ICON</div>
+</div>
 
 <a id="kim"></a>
 <div class="wrap_Member">
-        멤버카드 김하진
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">주정한, 자유로운 영혼</div>
-        <div class="content_member">
-            <div class="card_box">
-                <div class="item front"><img src="../static/image/pantom2.png"></div>
-                <div class="item back"><img src="../static/image/enfp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+    멤버카드 김하진
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">주정한, 자유로운 영혼</div>
+    <div class="content_member">
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/pantom2.png"></div>
+            <div class="item back"><img src="../static/image/enfp.png"></div>
         </div>
-        <div class="bar">
-            <div  class="hp_bar">100</div>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p><a href="github.com">스테이터스 확인</a></p>
         </div>
-        <div class="bar">
-            <div  class="mp_bar">100</div>
-        </div>
-        <div class="icon_member">Blog Link ICON</div>
     </div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+    <div class="icon_member">Blog Link ICON</div>
+</div>
 
 <a id="hwang"></a>
 <div class="wrap_Member">
-        멤버카드 황영상
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">주정한, 자유로운 영혼</div>
-        <div class="content_member">
-            <div class="card_box">
-                <div class="item front"><img src="../static/image/mario2.png"></div>
-                <div class="item back"><img src="../static/image/infp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+    멤버카드 황영상
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">주정한, 자유로운 영혼</div>
+    <div class="content_member">
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/mario2.png"></div>
+            <div class="item back"><img src="../static/image/infp.png"></div>
         </div>
-        <div class="bar">
-            <div  class="hp_bar">100</div>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p><a href="github.com">스테이터스 확인</a></p>
         </div>
-        <div class="bar">
-            <div  class="mp_bar">100</div>
-        </div>
-        <div class="icon_member">Blog Link ICON</div>
     </div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+    <div class="icon_member">Blog Link ICON</div>
+</div>
 
 
 </div>
@@ -386,16 +382,19 @@
         console.log(location)
         window.scrollTo({top: location, behavior: 'smooth'});
     }
+
     function goToScroll_lee() {
         var location = document.querySelector("#lee").offsetTop;
         console.log(location)
         window.scrollTo({top: location, behavior: 'smooth'});
     }
+
     function goToScroll_kim() {
         var location = document.querySelector("#kim").offsetTop;
         console.log(location)
         window.scrollTo({top: location, behavior: 'smooth'});
     }
+
     function goToScroll_hwang() {
         var location = document.querySelector("#hwang").offsetTop;
         console.log(location)
