@@ -2,19 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미니프로젝트 ㅣ 팀 올드보이</title>
-
-    <meta property="og:title" content="Portfolio | Yungsang Hwang"/>
-    <meta property="og:description" content="팀  올드보이"/>
-    <meta property="og:image"
-          content="https://miro.medium.com/max/1200/1*mleXoBROd_Iy1mXCz7D7iw.jpeg"/>
-
+    <title>팀 올드보이</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
         function popModal() {
             console.log('click connect')
         }
+
     </script>
 </head>
 <style>
@@ -145,6 +139,17 @@
 </style>
 
 
+
+
+
+
+
+
+
+
+
+
+
 <body>
 <div class="text_box">
     <div class="old_Boy">
@@ -153,15 +158,15 @@
 </div>
 <div class="fixed">
     <div class="flex">
-        <img class="charimg" src="../static/image/iori.png">
-        <img class="charimg" src="../static/image/phantom.png">
-        <img class="charimg" src="../static/image/snobro.png">
-        <img class="charimg" src="../static/image/mario.png">
+        <a href="#lee"><img class="charimg" src="../static/image/iori.png"></a>
+        <a href="#hwang"><img class="charimg" src="../static/image/phantom.png"></a>
+        <a><img onclick="goToScroll_joo()" class="charimg" src="../static/image/snobro.png"></a>
+        <a href="#kim"><img class="charimg" src="../static/image/mario.png"></a>
     </div>
     <img class="stageimg" src="../static/image/stage.png">
 </div>
 <div class="stage flex">
-    <div class="icon-button-iori"></div>
+    <div class="icon-button-iori" ></div>
     <div class="icon-button-phantom"></div>
     <div class="icon-button-snow-bro"></div>
     <div class="icon-button-mario"></div>
@@ -212,8 +217,10 @@
         </div>
     </div>
 
-    <div class="wrap_Member">
+<a id="joo"></a>
+        <div class="wrap_Member">
         멤버카드 주정한
+
         <div class="title_member">캐릭터 선택</div>
         <div class="name_member">주정한, 자유로운 영혼</div>
         <div class="content_member">
@@ -230,7 +237,8 @@
         <div class="icon_member">Blog Link ICON</div>
     </div>
 
-    <div class="wrap_Member">
+    <a id="lee"></a>
+        <div class="wrap_Member">
         멤버카드 이민기
         <div class="title_member">캐릭터 선택</div>
         <div class="name_member">주정한, 자유로운 영혼</div>
@@ -248,7 +256,8 @@
         <div class="icon_member">Blog Link ICON</div>
     </div>
 
-    <div class="wrap_Member">
+    <a id="kim"></a>
+        <div class="wrap_Member">
         멤버카드 김하진
         <div class="title_member">캐릭터 선택</div>
         <div class="name_member">주정한, 자유로운 영혼</div>
@@ -266,7 +275,8 @@
         <div class="icon_member">Blog Link ICON</div>
     </div>
 
-    <div class="wrap_Member">
+        <a id="hwang"></a>
+        <div class="wrap_Member">
         멤버카드 황영상
         <div class="title_member">캐릭터 선택</div>
         <div class="name_member">주정한, 자유로운 영혼</div>
@@ -287,6 +297,11 @@
 
 </div>
 
-
+<script>
+    function goToScroll_joo(){
+            var location = document.querySelector("#joo").offsetTop;
+            console.log(location)
+            window.scrollTo({top:location, behavior:'smooth'});
+        }
+</script>
 </body>
-</html>
