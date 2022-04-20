@@ -60,6 +60,7 @@
         margin: 1000px auto;
         width: 1300px;
         height: 1000px;
+        background-color: #828282;
     }
 
     .img_team, .img_member {
@@ -110,6 +111,7 @@
     .content_member {
         margin-top: 70px;
         display: flex;
+
     }
 
     .desc_member {
@@ -250,3 +252,8 @@
         margin: 20px 0 20px 0;
         padding-top: 50px;
     }
+
+    /* 카드 이미징 관련 */
+    .sizing{ width: 300px; height: 400px}
+
+
