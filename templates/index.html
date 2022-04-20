@@ -10,30 +10,30 @@
             let today = new Date();
             let hours = today.getHours();
 
-            if (hours >= 7 && hours <= 9) {
-                $('.hp_bar').attr('src', '../static/image/hp_4.png');
-                // $(".hp_bar").text("100")
-                $('.mp_bar').css('width', '85%');
-                $(".mp_bar").text("85")
-            }
-            else if (hours >= 10 && hours <= 13) {
-                $('.hp_bar').css('width', '55%');
-                $(".hp_bar").text("55")
-                $('.mp_bar').css('width', '45%');
-                $(".mp_bar").text("45")
-            }
-            else if (hours >= 14 && hours <= 17) {
-                $('.hp_bar').css('width', '35%');
-                $(".hp_bar").text("35")
-                $('.mp_bar').css('width', '25%');
-                $(".mp_bar").text("25")
-            }
-            else {
-                $('.hp_bar').css('width', "15%");
-                $(".hp_bar").text("15")
-                $('.mp_bar').css('width', '5%');
-                $(".mp_bar").text("5")
-            }
+            // if (hours >= 7 && hours <= 9) {
+            //     $('.hp_bar').attr('src', '../static/image/hp_4.png');
+            //     // $(".hp_bar").text("100")
+            //     $('.mp_bar').css('width', '85%');
+            //     $(".mp_bar").text("85")
+            // }
+            // else if (hours >= 10 && hours <= 13) {
+            //     $('.hp_bar').css('width', '55%');
+            //     $(".hp_bar").text("55")
+            //     $('.mp_bar').css('width', '45%');
+            //     $(".mp_bar").text("45")
+            // }
+            // else if (hours >= 14 && hours <= 17) {
+            //     // $('.hp_bar').css('width', '35%');
+            //     $(".hp_bar").text("35")
+            //     // $('.mp_bar').css('width', '25%');
+            //     $(".mp_bar").text("25")
+            // }
+            // else {
+            //     // $('.hp_bar').css('width', "15%");
+            //     $(".hp_bar").text("15")
+            //     // $('.mp_bar').css('width', '5%');
+            //     $(".mp_bar").text("5")
+            // }
 
         })
 
@@ -150,13 +150,6 @@
         margin: 70px 0 0 130px;
     }
 
-    /*.hp_bar, .mp_bar {*/
-    /*    background-color: crimson;*/
-    /*    width: 300px;*/
-    /*    height: 30px;*/
-    /*    margin: 20px 0 0 144px;*/
-    /*}*/
-
     .icon_member {
         background-color: darkgoldenrod;
         float: right;
@@ -200,9 +193,17 @@
     .card_box:hover .item.back {
         transform: rotateY(0deg);
     }
-
-    .hp_bar{
-        margin-left: 144px;
+    .hp_bar {
+        width: 300px;
+        height: 30px;
+        background-color: red;
+        margin: 20px 0 0 144px;
+    }
+    .mp_bar{
+        background-color: blue;
+        width: 300px;
+        height: 30px;
+        margin: 10px 0 0 144px;
     }
 </style>
 
@@ -292,12 +293,9 @@
                 <p><a href="github.com">스테이터스 확인</a></p>
             </div>
         </div>
-        <div class="bar">
-            <div><img class="hp_bar" src="../static/image/hp_4.png"></div>
-        </div>
-        <div class="bar">
-            <div  class="mp_bar">100</div>
-        </div>
+            <div class="hp_bar" ></div>
+            <div class="mp_bar" ></div>
+
         <div class="icon_member">Blog Link ICON</div>
     </div>
 
