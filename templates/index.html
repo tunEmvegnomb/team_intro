@@ -11,8 +11,8 @@
             let hours = today.getHours();
 
             if (hours >= 7 && hours <= 9) {
-                $('.hp_bar').css('width', '100%');
-                $(".hp_bar").text("100")
+                $('.hp_bar').attr('src', '../static/image/hp_4.png');
+                // $(".hp_bar").text("100")
                 $('.mp_bar').css('width', '85%');
                 $(".mp_bar").text("85")
             }
@@ -150,12 +150,12 @@
         margin: 70px 0 0 130px;
     }
 
-    .hp_bar, .mp_bar {
-        background-color: crimson;
-        width: 300px;
-        height: 30px;
-        margin: 20px 0 0 144px;
-    }
+    /*.hp_bar, .mp_bar {*/
+    /*    background-color: crimson;*/
+    /*    width: 300px;*/
+    /*    height: 30px;*/
+    /*    margin: 20px 0 0 144px;*/
+    /*}*/
 
     .icon_member {
         background-color: darkgoldenrod;
@@ -201,32 +201,8 @@
         transform: rotateY(0deg);
     }
 
-    .hp_bar,
-    .mp_bar {
-        position: absolute;
-        line-height: 30px;
-        text-align: center;
-        background-color: crimson;
-        width: 300px;
-        height: 30px;
-        /*margin: 20px 0 0 144px;*/
-    }
-
-    .mp_bar {
-        background-color: blue;
-        width: 100%;
-    }
-
-    .hp_bar {
-        width: 100%;
-    }
-
-    .bar {
-        position: relative;
-        background-color: gray;
-        width: 300px;
-        height: 30px;
-        margin: 20px 0 0 144px;
+    .hp_bar{
+        margin-left: 144px;
     }
 </style>
 
@@ -317,7 +293,7 @@
             </div>
         </div>
         <div class="bar">
-            <div  class="hp_bar">100</div>
+            <div><img class="hp_bar" src="../static/image/hp_4.png"></div>
         </div>
         <div class="bar">
             <div  class="mp_bar">100</div>
