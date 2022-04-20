@@ -60,7 +60,6 @@
         margin: 1000px auto;
         width: 1300px;
         height: 1000px;
-        background-color: grey;
     }
 
     .img_team, .img_member {
@@ -75,14 +74,12 @@
     }
 
     .title_team {
-        background-color: red;
         width: 400px;
         height: 100px;
         margin: 70px 0 0 250px;
     }
 
     .desc_team {
-        background-color: blue;
         width: 800px;
         height: 400px;
         margin: 50px auto 50px auto;
@@ -91,17 +88,23 @@
     }
 
     .title_member {
-        background-color: aqua;
+        /*background-color: aqua;*/
         width: 400px;
         height: 50px;
         margin: 20px auto;
+
+        font-size: 50px;
+        text-align: center;
     }
 
     .name_member {
-        background-color: blueviolet;
+        /*background-color: blueviolet;*/
         width: 600px;
         height: 50px;
         margin: 40px auto;
+
+        font-size: 50px;
+        text-align: center;
     }
 
     .content_member {
@@ -110,9 +113,13 @@
     }
 
     .desc_member {
-        background-color: darkorange;
+        /*background-color: darkorange;*/
         width: 500px;
         margin: 70px 0 0 130px;
+
+        font-size: 40px;
+        text-align: left;
+        padding-left: 25px;
     }
 
     /* 멤버카드 우하단 아이콘 */
