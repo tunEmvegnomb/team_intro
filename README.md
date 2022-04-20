@@ -1,12 +1,10 @@
 # team_intro
 
-        
-# 프로젝트 구성
-    - HTML
-        - 모바일 디자인(가로가 짧고, 세로가 긴 형태)
-    - CSS
-        - 게임 테마의 페이지 디자인
-    - JS
-        - 다양한 hover Animating option
-    - FLASK
-        - 배포를 위한 기초적 서버 구성
+static folder
+- 스태틱 폴더는 프로젝트의 폰트, 이미지 파일을 관리합니다.
+
+templates folder
+- 템플릿 폴더는 프로젝트의 html 파일을 관리합니다
+
+app.py
+- app.py 파일은 플라스크 프레임워크로 서버를 관리하고 배포하기 위한 용도로써 사용됩니다.
