@@ -5,9 +5,63 @@
     <title>팀 올드보이</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
-        function popModal() {
-            console.log('click connect')
-        }
+        $(document).ready(function () {
+
+            let today = new Date();
+            let hours = today.getHours();
+            console.log(hours)
+
+
+            // 기능설계
+            // MP부터 닳고 HP닳기
+            // 총 10칸을 9시부터 1시간 간격으로 닳게 하기
+            // 점심과 저녁시간 빼기
+            // removeClass, addClass 활용
+
+            // MP부터 10시부터~15시까지
+
+            if (hours >= 10 && hours <= 11) {
+                $('.mp_bar').removeClass('mp_4').addClass('mp_3')
+            } else if (hours >= 11 && hours <= 12) {
+                $('.mp_bar').removeClass('mp_3').addClass('mp_3')
+            } else if (hours >= 12 && hours <= 13) {
+                $('.mp_bar').removeClass('mp_2').addClass('mp_1')
+            } else if (hours >= 14 && hours <= 15) {
+                $('.mp_bar').removeClass('mp_1').addClass('mp_0')
+            }
+
+            // HP 15시부터~21시까지
+            else if (hours >= 15 && hours <= 16) {
+                $('.hp_bar').removeClass('hp_4').addClass('hp_3')
+            } else if (hours >= 16 && hours <= 17) {
+                $('.hp_bar').removeClass('hp_3').addClass('hp_2')
+            } else if (hours >= 17 && hours <= 18) {
+                $('.hp_bar').removeClass('hp_2').addClass('hp_1')
+            } else if (hours >= 19 && hours <= 20) {
+                $('.hp_bar').removeClass('hp_1').addClass('hp_0')
+
+            } else {
+                $('.hp_bar').removeClass('hp_1').addClass('hp_0')
+                $('.mp_bar').removeClass('mp_1').addClass('mp_0')
+            }
+
+
+            // if (hours >= 7 && hours <= 9) {
+            //     $('.hp_bar').css({'background': url("../static/image/hp_1.png")});
+            //     $('.mp_bar').attr('src', '../static/image/mp_4.png');
+            // } else if (hours >= 10 && hours <= 13) {
+            //     $('.hp_bar').css('background-image', url("../static/image/hp_1.png"));
+            //     $('.mp_bar').attr('src', '../static/image/mp_3.png');
+            // } else if (hours >= 14 && hours <= 17) {
+            //     $('.hp_bar').css('background-image', url("../static/image/hp_1.png"));
+            //     $('.mp_bar').attr('src', '../static/image/mp_2.png');
+            // } else {
+            //     $('.hp_bar').removeClass('hp_4').addClass('hp_1')
+            //     $('.mp_bar').attr('src', '../static/image/mp_1.png');
+            // }
+
+
+        })
 
     </script>
 </head>
@@ -57,7 +111,7 @@
 
     .fixed {
         position: fixed;
-        bottom: 0px;
+        bottom: 0;
     }
 
     .charimg {
@@ -122,19 +176,119 @@
         margin: 70px 0 0 130px;
     }
 
-    .hp_bar, .mp_bar {
-        background-color: crimson;
-        width: 300px;
-        height: 30px;
-        margin: 20px 0 0 144px;
-    }
-
     .icon_member {
         background-color: darkgoldenrod;
         float: right;
         width: 100px;
         height: 100px;
         margin-right: 50px;
+    }
+
+    /*3D Rotate 구현*/
+
+    .card_box {
+        width: 300px;
+        height: 400px;
+        margin: 70px 0 0 144px;
+
+        /*perspective: 300px;*/
+    }
+
+    .card_box .item {
+        width: 300px;
+        height: 400px;
+        border: 1px solid #828282;
+        font-size: 35px;
+        backface-visibility: hidden;
+        transition: 1.5s;
+    }
+
+    .card_box .item.front {
+        position: absolute;
+        transform: rotateY(0deg);
+    }
+
+    .card_box:hover .item.front {
+        transform: rotateY(180deg);
+    }
+
+    .card_box .item.back {
+        transform: rotateY(-180deg);
+    }
+
+    .card_box:hover .item.back {
+        transform: rotateY(0deg);
+    }
+
+    .hp_bar {
+        width: 300px;
+        height: 50px;
+        margin: 5px 0 0 144px;
+
+        /* div 이미지 넣기 */
+        background-image: url("../static/image/hp_4.png");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .mp_bar {
+        width: 300px;
+        height: 50px;
+        margin: 5px 0 0 144px;
+
+        /* div 이미지 넣기 */
+        background-image: url('../static/image/mp_4.png');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .stageimg, .charimg {
+        z-index: 3
+    }
+
+    .item {
+        z-index: 1
+    }
+
+    /*  백그라운드 이미지 넣기 용도  */
+    .hp_1 {
+        background-image: url('../static/image/hp_1.png');
+    }
+
+    .hp_2 {
+        background-image: url('../static/image/hp_2.png');
+    }
+
+    .hp_3 {
+        background-image: url('../static/image/hp_3.png');
+    }
+
+    .hp_4 {
+        background-image: url('../static/image/hp_4.png');
+    }
+
+    .hp_0 {
+        background-image: url('../static/image/hp_0.png');
+    }
+
+    .mp_1 {
+        background-image: url('../static/image/mp_1.png');
+    }
+
+    .mp_2 {
+        background-image: url('../static/image/mp_2.png');
+    }
+
+    .mp_3 {
+        background-image: url('../static/image/mp_3.png');
+    }
+
+    .mp_4 {
+        background-image: url('../static/image/mp_4.png');
+    }
+
+    .mp_0 {
+        background-image: url('../static/image/mp_0.png');
     }
 </style>
 
@@ -209,11 +363,14 @@
 <a id="joo"></a>
 <div class="wrap_Member">
     멤버카드 주정한
-
     <div class="title_member">캐릭터 선택</div>
     <div class="name_member">주정한, 자유로운 영혼</div>
     <div class="content_member">
-        <div class="img_member">IMG</div>
+        <!-- 300x400 -->
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/snowb.png"></div>
+            <div class="item back"><img src="../static/image/entp.png"></div>
+        </div>
         <div class="desc_member">
             <p>ENTP</p>
             <p>여행자</p>
@@ -221,8 +378,9 @@
             <p><a href="github.com">스테이터스 확인</a></p>
         </div>
     </div>
-    <div class="hp_bar">HP :</div>
-    <div class="mp_bar">MP :</div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+
     <div class="icon_member">Blog Link ICON</div>
 </div>
 
@@ -232,7 +390,10 @@
     <div class="title_member">캐릭터 선택</div>
     <div class="name_member">주정한, 자유로운 영혼</div>
     <div class="content_member">
-        <div class="img_member">IMG</div>
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/iori.jpg"></div>
+            <div class="item back"><img src="../static/image/enfp.png"></div>
+        </div>
         <div class="desc_member">
             <p>ENTP</p>
             <p>여행자</p>
@@ -240,8 +401,8 @@
             <p><a href="github.com">스테이터스 확인</a></p>
         </div>
     </div>
-    <div class="hp_bar">HP :</div>
-    <div class="mp_bar">MP :</div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
     <div class="icon_member">Blog Link ICON</div>
 </div>
 
@@ -251,7 +412,10 @@
     <div class="title_member">캐릭터 선택</div>
     <div class="name_member">주정한, 자유로운 영혼</div>
     <div class="content_member">
-        <div class="img_member">IMG</div>
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/pantom2.png"></div>
+            <div class="item back"><img src="../static/image/enfp.png"></div>
+        </div>
         <div class="desc_member">
             <p>ENTP</p>
             <p>여행자</p>
@@ -259,8 +423,8 @@
             <p><a href="github.com">스테이터스 확인</a></p>
         </div>
     </div>
-    <div class="hp_bar">HP :</div>
-    <div class="mp_bar">MP :</div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
     <div class="icon_member">Blog Link ICON</div>
 </div>
 
@@ -270,7 +434,10 @@
     <div class="title_member">캐릭터 선택</div>
     <div class="name_member">주정한, 자유로운 영혼</div>
     <div class="content_member">
-        <div class="img_member">IMG</div>
+        <div class="card_box">
+            <div class="item front"><img src="../static/image/mario2.png"></div>
+            <div class="item back"><img src="../static/image/infp.png"></div>
+        </div>
         <div class="desc_member">
             <p>ENTP</p>
             <p>여행자</p>
@@ -278,8 +445,8 @@
             <p><a href="github.com">스테이터스 확인</a></p>
         </div>
     </div>
-    <div class="hp_bar">HP :</div>
-    <div class="mp_bar">MP :</div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
     <div class="icon_member">Blog Link ICON</div>
 </div>
 
@@ -292,16 +459,19 @@
         console.log(location)
         window.scrollTo({top: location, behavior: 'smooth'});
     }
+
     function goToScroll_lee() {
         var location = document.querySelector("#lee").offsetTop;
         console.log(location)
         window.scrollTo({top: location, behavior: 'smooth'});
     }
+
     function goToScroll_kim() {
         var location = document.querySelector("#kim").offsetTop;
         console.log(location)
         window.scrollTo({top: location, behavior: 'smooth'});
     }
+
     function goToScroll_hwang() {
         var location = document.querySelector("#hwang").offsetTop;
         console.log(location)
