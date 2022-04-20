@@ -1,259 +1,287 @@
 @font-face {
-        font-family: "ugly";
-        src: url("../../static/font/Ugly Byte Free Trial-80da.woff") format("woff"),
-        url("../../static/font/Ugly Byte Free Trial-d5a7.woff2") format("woff2");
+    font-family: "ugly";
+    src: url("../../static/font/Ugly Byte Free Trial-80da.woff") format("woff"),
+    url("../../static/font/Ugly Byte Free Trial-d5a7.woff2") format("woff2");
 
-    }
+}
 
-    * {
-        color: white;
-        /*font-family: 'NeoDunggeunmo';*/
-        font-family: 'NeoDunggeunmo Code';
+* {
+    color: white;
+    /*font-family: 'NeoDunggeunmo';*/
+    font-family: 'NeoDunggeunmo Code';
 
-    }
+}
 
-    body {
-        background-color: black;
-        height: 20000px;
-    }
-
-
-    .text_box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    }
-
-    .old_Boy {
-        overflow: hidden;
-        position: relative;
-        font-family: 'ugly', serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 200px;
-        line-height: 180px;
-        color: #FFFFFF;
-    }
-
-    .flex {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .stageimg {
-        width: 100vw;
-        height: 150px;
-    }
-
-    .fixed {
-        position: fixed;
-        bottom: 0;
-    }
-
-    .charimg {
-        width: 170px;
-        height: 170px;
-    }
-
-    .wrap_teamIntro, .wrap_teamGoal, .wrap_teamRule, .wrap_Member {
-        margin: 1000px auto;
-        width: 1300px;
-        height: 1000px;
-        background-color: #828282;
-    }
-
-    .img_team, .img_member {
-        background-color: green;
-        width: 300px;
-        height: 400px;
-        margin: 70px 0 0 144px;
-    }
-
-    .content_team {
-        display: flex;
-    }
-
-    .title_team {
-        width: 400px;
-        height: 100px;
-        margin: 70px 0 0 250px;
-    }
-
-    .desc_team {
-        width: 800px;
-        height: 400px;
-        margin: 50px auto 50px auto;
-
-        font-size: 30px;
-    }
-
-    .title_member {
-        /*background-color: aqua;*/
-        width: 400px;
-        height: 50px;
-        margin: 20px auto;
-
-        font-size: 50px;
-        text-align: center;
-    }
-
-    .name_member {
-        /*background-color: blueviolet;*/
-        width: 600px;
-        height: 50px;
-        margin: 40px auto;
-
-        font-size: 50px;
-        text-align: center;
-    }
-
-    .content_member {
-        margin-top: 70px;
-        display: flex;
-
-    }
-
-    .desc_member {
-        /*background-color: darkorange;*/
-        width: 500px;
-        margin: 70px 0 0 130px;
-
-        font-size: 40px;
-        text-align: left;
-        padding-left: 25px;
-    }
-
-    /* 멤버카드 우하단 아이콘 */
-    .icon_member {
+body {
+    background-color: black;
+    height: 20000px;
+}
 
 
-        float: right;
-        width: 100px;
-        height: 100px;
-        margin: 0 70px;
+.text_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 
-    }
+.old_Boy {
+    overflow: hidden;
+    position: relative;
+    font-family: 'ugly', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 200px;
+    line-height: 180px;
+    color: #FFFFFF;
+}
 
-    .blog_link {
-        width: 170px;
-        height: 170px;
-    }
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
 
-    /*3D Rotate 구현*/
+.stageimg {
+    width: 100vw;
+    height: 150px;
+}
 
-    .card_box {
-        width: 300px;
-        height: 400px;
-        margin: 70px 0 0 144px;
+.fixed {
+    position: fixed;
+    bottom: 0;
+}
 
-        /*perspective: 300px;*/
-    }
+.charimg {
+    width: 170px;
+    height: 170px;
+}
 
-    .card_box .item {
-        width: 300px;
-        height: 400px;
-        border: 1px solid #828282;
-        font-size: 35px;
-        backface-visibility: hidden;
-        transition: 1.5s;
-    }
+.wrap_teamIntro, .wrap_teamGoal, .wrap_teamRule, .wrap_Member {
+    margin: 1000px auto;
+    width: 1300px;
+    height: 1000px;
+    background-color: #828282;
+}
 
-    .card_box .item.front {
-        position: absolute;
-        transform: rotateY(0deg);
-    }
+.img_team, .img_member {
+    background-color: green;
+    width: 300px;
+    height: 400px;
+    margin: 70px 0 0 144px;
+}
 
-    .card_box:hover .item.front {
-        transform: rotateY(180deg);
-    }
+.content_team {
+    display: flex;
+}
 
-    .card_box .item.back {
-        transform: rotateY(-180deg);
-    }
+.title_team {
+    width: 400px;
+    height: 100px;
+    margin: 70px 0 0 250px;
+}
 
-    .card_box:hover .item.back {
-        transform: rotateY(0deg);
-    }
+.desc_team {
+    width: 800px;
+    height: 400px;
+    margin: 50px auto 50px auto;
 
-    .hp_bar {
-        width: 300px;
-        height: 50px;
-        margin: 5px 0 0 144px;
+    font-size: 30px;
+}
 
-        /* div 이미지 넣기 */
-        background-image: url("../../static/image/hp_4.png");
-        background-position: center;
-        background-size: cover;
-    }
+.title_member {
+    /*background-color: aqua;*/
+    width: 400px;
+    height: 50px;
+    margin: 20px auto;
 
-    .mp_bar {
-        width: 300px;
-        height: 50px;
-        margin: 5px 0 0 144px;
+    font-size: 50px;
+    text-align: center;
+}
 
-        /* div 이미지 넣기 */
-        background-image: url('../../static/image/mp_4.png');
-        background-position: center;
-        background-size: cover;
-    }
+.name_member {
+    /*background-color: blueviolet;*/
+    width: 600px;
+    height: 50px;
+    margin: 40px auto;
 
-    .stageimg, .charimg {
-        z-index: 3
-    }
+    font-size: 50px;
+    text-align: center;
+}
 
-    .item {
-        z-index: 1
-    }
+.content_member {
+    margin-top: 70px;
+    display: flex;
 
-    /*  백그라운드 이미지 넣기 용도  */
-    .hp_1 {
-        background-image: url('../../static/image/hp_1.png');
-    }
+}
 
-    .hp_2 {
-        background-image: url('../../static/image/hp_2.png');
-    }
+.desc_member {
+    /*background-color: darkorange;*/
+    width: 500px;
+    margin: 70px 0 0 130px;
 
-    .hp_3 {
-        background-image: url('../../static/image/hp_3.png');
-    }
+    font-size: 40px;
+    text-align: left;
+    padding-left: 25px;
+}
 
-    .hp_4 {
-        background-image: url('../../static/image/hp_4.png');
-    }
+/* 멤버카드 우하단 아이콘 */
+.icon_member {
 
-    .hp_0 {
-        background-image: url('../../static/image/hp_0.png');
-    }
 
-    .mp_1 {
-        background-image: url('../../static/image/mp_1.png');
-    }
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin: 0 70px;
 
-    .mp_2 {
-        background-image: url('../../static/image/mp_2.png');
-    }
+}
 
-    .mp_3 {
-        background-image: url('../../static/image/mp_3.png');
-    }
+.blog_link {
+    width: 170px;
+    height: 170px;
+}
 
-    .mp_4 {
-        background-image: url('../../static/image/mp_4.png');
-    }
+/*3D Rotate 구현*/
 
-    .mp_0 {
-        background-image: url('../../static/image/mp_0.png');
-    }
+.card_box {
+    width: 300px;
+    height: 400px;
+    margin: 70px 0 0 144px;
 
-    /*  폰트 관련  */
-    .desc_team > li {
-        margin: 20px 0 20px 0;
-        padding-top: 50px;
-    }
+    /*perspective: 300px;*/
+}
 
-    /* 카드 이미징 관련 */
-    .sizing{ width: 300px; height: 400px}
+.card_box .item {
+    width: 300px;
+    height: 400px;
+    border: 1px solid #828282;
+    font-size: 35px;
+    backface-visibility: hidden;
+    transition: 1.5s;
+}
 
+.card_box .item.front {
+    position: absolute;
+    transform: rotateY(0deg);
+}
+
+.card_box:hover .item.front {
+    transform: rotateY(180deg);
+}
+
+.card_box .item.back {
+    transform: rotateY(-180deg);
+}
+
+.card_box:hover .item.back {
+    transform: rotateY(0deg);
+}
+
+.hp_bar {
+    width: 300px;
+    height: 50px;
+    margin: 5px 0 0 144px;
+
+    /* div 이미지 넣기 */
+    background-image: url("../../static/image/hp_4.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.mp_bar {
+    width: 300px;
+    height: 50px;
+    margin: 5px 0 0 144px;
+
+    /* div 이미지 넣기 */
+    background-image: url('../../static/image/mp_4.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.stageimg, .charimg {
+    z-index: 3
+}
+
+.item {
+    z-index: 1
+}
+
+/*  백그라운드 이미지 넣기 용도  */
+.hp_1 {
+    background-image: url('../../static/image/hp_1.png');
+}
+
+.hp_2 {
+    background-image: url('../../static/image/hp_2.png');
+}
+
+.hp_3 {
+    background-image: url('../../static/image/hp_3.png');
+}
+
+.hp_4 {
+    background-image: url('../../static/image/hp_4.png');
+}
+
+.hp_0 {
+    background-image: url('../../static/image/hp_0.png');
+}
+
+.mp_1 {
+    background-image: url('../../static/image/mp_1.png');
+}
+
+.mp_2 {
+    background-image: url('../../static/image/mp_2.png');
+}
+
+.mp_3 {
+    background-image: url('../../static/image/mp_3.png');
+}
+
+.mp_4 {
+    background-image: url('../../static/image/mp_4.png');
+}
+
+.mp_0 {
+    background-image: url('../../static/image/mp_0.png');
+}
+
+/*  폰트 관련  */
+.desc_team > li {
+    margin: 20px 0 20px 0;
+    padding-top: 50px;
+}
+
+/* 카드 이미징 관련 */
+.sizing {
+    width: 300px;
+    height: 400px
+}
+
+
+.mybtn {
+    width: 200px;
+    height: 50px;
+
+    background-color: transparent;
+    color: white;
+
+    border-radius: 50px;
+    border: 1px groove white;
+
+
+    font-size: 25px;
+}
+
+.mybtn:hover {
+    border: 5px solid white;
+    font-size: 28px;
+
+}
+.wrap_btn{
+    width: 200px;
+    position: center;
+    margin: 80px auto;
+}
 
