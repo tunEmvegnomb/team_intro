@@ -75,6 +75,15 @@ function goToScroll_hwang() {
     window.scrollTo({top: location, behavior: 'smooth'});
 }
 
+function goToScroll_team() {
+    var location = document.querySelector(".wrap_teamIntro").offsetTop;
+    console.log(location)
+    setTimeout(function(){
+        window.scrollTo({top: location-100, behavior: 'smooth'});
+    },3000)
+
+}
+
 function sizing() {
     $('.front').addClass('sizing')
 }
