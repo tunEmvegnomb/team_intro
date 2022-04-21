@@ -1,4 +1,4 @@
-let ready = $(document).ready(function () {
+$(document).ready(function () {
     now_status(), sizing();
 
     $(".icon_member").hover(function () {
@@ -8,7 +8,7 @@ let ready = $(document).ready(function () {
             $(".icon_member_textbox").hide()
         })
 
-
+})
     function now_status() {
         let today = new Date();
         let hours = today.getHours();
@@ -88,12 +88,12 @@ let ready = $(document).ready(function () {
     }
 
     function music() {
-        $('.mybtn').hide()
+        $(".game-start").hide();
         const audioContainer = document.querySelector('#audioContainer');
-        audioContainer.loop = true
-        audioContainer.play()
+        audioContainer.loop = true;
+        audioContainer.play();
         $('.charimg').css('display', 'block');
         $('#char').addClass('ani_fade_in_left');
-    };})
+    }
 
 
