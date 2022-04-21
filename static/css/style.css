@@ -87,7 +87,7 @@ body {
 .wrap_teamIntro, .wrap_teamGoal, .wrap_teamRule, .wrap_Member {
     position: relative;
     margin: 500px auto;
-    width: 800px;
+    width: 1000px;
     height: 700px;
     /*background-color: skyblue;*/
     background: rgba(137, 118, 84, 60%);
@@ -105,7 +105,7 @@ body {
     background-color: gray;
     width: 300px;
     height: 400px;
-    margin: 40px 0 0 40px;
+    margin: 40px 0 0 100px;
 
     border: 3px solid papayawhip;
     border-radius: 3px;
@@ -114,23 +114,24 @@ body {
 
 .content_team {
     display: flex;
+    width: 1000px;
+    margin-top: 60px;
 }
 
 .title_team {
-    width: 400px;
+    width: 600px;
     height: 100px;
-    margin: 40px 0 0 50px;
+    margin: 40px 0 0 30px;
 }
 
 .title_team > h2 {
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .desc_team {
     width: 400px;
     height: 400px;
     margin: 5px auto 5px auto;
-    font-size: 15px;
 }
 
 .title_member {
