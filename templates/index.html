@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Dalgona/neodgm-webfont@1.510/neodgm_code/style.css">
 
     <link rel="stylesheet" href="../static/css/style.css">
-    <script src="../static/js/js.js"></script>
+
 
     <script>
 
@@ -24,201 +24,243 @@
 
 
 <body>
-    <div class="text_box">
-        <div class="old_Boy">
-            old boy
+<div class="modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <!--            status창 이미지 태그-->
+            <img src="" class="team-image" id="status-image">
+            <div class="name-strong-point">
+                <!--                id 값을 지정해서 text값 변경 기능 추가 가능 -> 코드를 일일이 치기 보다는 만들어 놓은 부분 재사용가능-->
+                <p class="name" id="status-name">
+                </p>
+                <!--                닉네임 아이디 지정-->
+                <p class="nickname" id="status-nickname">
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="wrap_btn_box">
-        <div class="wrap_btn">
-            <audio id="audioContainer">
-                <source id="audioSource" src="../static/audio/opening.mp3">
-            </audio>
-        </div>
-        <!--애니매이팅과 음악을 담당하는 버튼-->
-            <div onclick="music(), goToScroll_team()" class="game-start">music start</div>
-    </div>
-   
-    <div class="fixed">
-        <div id="char" class="flex">
-            <img onclick="goToScroll_lee()" class="charimg" src="../static/image/character/iori.png">
-            <img onclick="goToScroll_hwang()" class="charimg" src="../static/image/character/phantom.png">
-            <img onclick="goToScroll_joo()" class="charimg" src="../static/image/character/snobro.png">
-            <img onclick="goToScroll_kim()" class="charimg" src="../static/image/character/mario.png">
-        </div>
-        
-    </div>
-
-    <div class="stage flex">
-        <div class="icon-button-iori"></div>
-        <div class="icon-button-phantom"></div>
-        <div class="icon-button-snow-bro"></div>
-        <div class="icon-button-mario"></div>
-    </div>
-
-    <div class="wrap_teamIntro">
-        <div class="content_team">
-            <div class="img_team img_team_intro"></div>
-            <div class="title_team">
-                <h2>팀 올드보이 소개</h2>
-                <div class="desc_team">
-                    <p>진한 아재미를 물씬 풍기는 중후한 매력의 팀입니다</p>
-                    <p>조용한 듯 보이지만, 잘 웃습니다!</p>
-                    <p>목표수행에 있어서는 근성의 사나이들입니다!</p>
-                    <p>홈 쿠킹이 저희의 공통점인만큼 다정다감 합니다 ^~^</p>
+        <div class="modal-body">
+            <div class="modal-body-row1">
+                <!--                 level은 0으로 지정 우리는 다 초보니까 ^^-->
+                <div class="blue-status-category">
+                    lv : <span class="status-content">0</span>
+                </div>
+                <!--                mbti id 지정-->
+                <div class="blue-status-category" id="status-mbti">
+                    mbti : <span class="status-content"></span>
                 </div>
             </div>
-        </div>
-
-        <p class="typing"></p>
-    </div>
-
-    <div class="wrap_teamGoal">
-        <div class="content_team">
-            <div class="img_team img_team_goal">
+            <div class="modal-body-row2">
+                <div class="blue-status-category">
+                    <!--                    장점 아이디 생성 -->
+                    장점 : <span class="status-content" id="strong-point"></span>
+                </div>
+                <div class="blue-status-category">
+                    <!--                     협업 스타일 아이디 생성 -->
+                    협업 스타일 : <span class="status-content" id="teaming-method"></span>
+                </div>
             </div>
-            <div class="title_team">
-                <h2>팀 올드보이 목표</h2>
-                <div class="desc_team">
-                    <p>진한 아재미를 물씬 풍기는 중후한 매력의 팀입니다</p>
-                    <p>조용한 듯 보이지만, 잘 웃습니다!</p>
-                    <p>목표수행에 있어서는 근성의 사나이들입니다!</p>
-                    <p>홈 쿠킹이 저희의 공통점인만큼 다정다감 합니다 ^~^</p>
+            <div class="modal-body-row2">
+                <!--                tmi를 옮긴 대사 아이디 생성-->
+                <div class="status-content" id="tmi-to-line">
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="text_box">
+    <div class="old_Boy">
+        old boy
+    </div>
+</div>
+<div class="wrap_btn_box">
+    <div class="wrap_btn">
+        <audio id="audioContainer">
+            <source id="audioSource" src="../static/audio/opening.mp3">
+        </audio>
+    </div>
+    <!--애니매이팅과 음악을 담당하는 버튼-->
+    <div onclick="music(), goToScroll_team()" class="game-start">music start</div>
+</div>
 
-    <div class="wrap_teamGoal">
-        <div class="content_team">
-            <div class="img_team img_team_rule">
-            </div>
-            <div class="title_team">
-                <h2>팀 올드보이 목표</h2>
-                <div class="desc_team">
-                    <p>진한 아재미를 물씬 풍기는 중후한 매력의 팀입니다</p>
-                    <p>조용한 듯 보이지만, 잘 웃습니다!</p>
-                    <p>목표수행에 있어서는 근성의 사나이들입니다!</p>
-                    <p>홈 쿠킹이 저희의 공통점인만큼 다정다감 합니다 ^~^</p>
-                </div>
+<div class="fixed">
+    <div id="char" class="flex">
+        <img onclick="goToScroll_lee()" class="charimg" src="../static/image/character/iori.png">
+        <img onclick="goToScroll_hwang()" class="charimg" src="../static/image/character/phantom.png">
+        <img onclick="goToScroll_joo()" class="charimg" src="../static/image/character/snobro.png">
+        <img onclick="goToScroll_kim()" class="charimg" src="../static/image/character/mario.png">
+    </div>
+
+</div>
+
+<div class="stage flex">
+    <div class="icon-button-iori"></div>
+    <div class="icon-button-phantom"></div>
+    <div class="icon-button-snow-bro"></div>
+    <div class="icon-button-mario"></div>
+</div>
+
+<div class="wrap_teamIntro">
+    <div class="content_team">
+        <div class="img_team img_team_intro"></div>
+        <div class="title_team">
+            <h2>팀 올드보이 소개</h2>
+            <div class="desc_team">
+                <p>진한 아재미를 물씬 풍기는 중후한 매력의 팀입니다</p>
+                <p>조용한 듯 보이지만, 잘 웃습니다!</p>
+                <p>목표수행에 있어서는 근성의 사나이들입니다!</p>
+                <p>홈 쿠킹이 저희의 공통점인만큼 다정다감 합니다 ^~^</p>
             </div>
         </div>
     </div>
 
-    <a id="joo"></a>
-    <div class="wrap_Member">
-        멤버카드 주정한
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">주정한, 자유로운 여행자</div>
-        <div class="content_member">
-            <!-- 300x400 -->
-            <div class="card_box">
-                <div class="item front"><img class="sizing" src="https://url.kr/i5mnor"></div>
-                <div class="item back"><img src="../static/image/source/entp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+    <p class="typing"></p>
+</div>
+
+<div class="wrap_teamGoal">
+    <div class="content_team">
+        <div class="img_team img_team_goal">
         </div>
-        <div class="hp_bar"></div>
-        <div class="mp_bar"></div>
-        <div class="icon_member">
-            <div class="icon_member_textbox">블로그GoGo~</div>
-            <a href="https://medium.com/@about.joo91" target='_blank'><img class="blog_link"
-                    src="../static/image/snobro.png"> </a>
-                    src="../static/image/character/snobro.png"> </a>
+        <div class="title_team">
+            <h2>팀 올드보이 목표</h2>
+            <div class="desc_team">
+                <p>진한 아재미를 물씬 풍기는 중후한 매력의 팀입니다</p>
+                <p>조용한 듯 보이지만, 잘 웃습니다!</p>
+                <p>목표수행에 있어서는 근성의 사나이들입니다!</p>
+                <p>홈 쿠킹이 저희의 공통점인만큼 다정다감 합니다 ^~^</p>
+            </div>
         </div>
     </div>
+</div>
 
-    <a id="lee"></a>
-    <div class="wrap_Member">
-        멤버카드 이민기
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">이민기, 프린세스 메이커</div>
-        <div class="content_member">
-            <div class="card_box">
-                <div class="item front"><img class="sizing" src="https://url.kr/u2139d"></div>
-                <div class="item back"><img src="../static/image/source/enfp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+<div class="wrap_teamGoal">
+    <div class="content_team">
+        <div class="img_team img_team_rule">
         </div>
-        <div class="hp_bar"></div>
-        <div class="mp_bar"></div>
-        <div class="icon_member">
-            <div class="icon_member_textbox">블로그GoGo~</div>
-            <a href="https://velog.io/@psjlmk" target='_blank'><img class="blog_link" src="../static/image/character/iori.png">
-            </a>
-
+        <div class="title_team">
+            <h2>팀 올드보이 목표</h2>
+            <div class="desc_team">
+                <p>진한 아재미를 물씬 풍기는 중후한 매력의 팀입니다</p>
+                <p>조용한 듯 보이지만, 잘 웃습니다!</p>
+                <p>목표수행에 있어서는 근성의 사나이들입니다!</p>
+                <p>홈 쿠킹이 저희의 공통점인만큼 다정다감 합니다 ^~^</p>
+            </div>
         </div>
     </div>
+</div>
 
-    <a id="kim"></a>
-    <div class="wrap_Member">
-        멤버카드 김하진
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">김하진, 취미부자 수집가</div>
-        <div class="content_member">
-            <div class="card_box">
-                <div class="item front"><img class="sizing" src="https://url.kr/cja8yx"></div>
-                <div class="item back"><img src="../static/image/source/enfp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+<a id="joo"></a>
+<div class="wrap_Member">
+    멤버카드 주정한
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">주정한, 자유로운 여행자</div>
+    <div class="content_member">
+        <!-- 300x400 -->
+        <div class="card_box">
+            <div class="item front"><img class="sizing" src="https://url.kr/i5mnor"></div>
+            <div class="item back"><img src="../static/image/source/entp.png"></div>
         </div>
-        <div class="hp_bar"></div>
-        <div class="mp_bar"></div>
-        <div class="icon_member">
-            <div class="icon_member_textbox">블로그GoGo~</div>
-            <a href="https://github.com/haajinkim/Record_blog" target='_blank'><img class="blog_link"
-                    src="../static/image/character/mario.png"> </a>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p><a class="open-modal 3">스테이터스 확인</a></p>
         </div>
     </div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+    <div class="icon_member">
+        <div class="icon_member_textbox">블로그GoGo~</div>
+        <a href="https://medium.com/@about.joo91" target='_blank'><img class="blog_link"
+                                                                       src="../static/image/character/snobro.png"> </a>
+    </div>
+</div>
 
-    <a id="hwang"></a>
-    <div class="wrap_Member">
-        멤버카드 황영상
-        <div class="title_member">캐릭터 선택</div>
-        <div class="name_member">황영상, 하루종일 몽상가</div>
-        <div class="content_member">
-            <div class="card_box">
-                <div class="item front"><img class="sizing"
-                        src="https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa8d9002c-b736-4908-832b-4ed8fad4c4a4%2FKakaoTalk_Photo_2022-04-12-12-29-09.jpeg?table=block&id=7d24aa4f-61d2-431c-abc6-9200acae0b91&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2">
-                </div>
-                <div class="item back"><img src="../static/image/source/infp.png"></div>
-            </div>
-            <div class="desc_member">
-                <p>ENTP</p>
-                <p>여행자</p>
-                <p>홈쿠커</p>
-                <p><a href="github.com">스테이터스 확인</a></p>
-            </div>
+<a id="lee"></a>
+<div class="wrap_Member">
+    멤버카드 이민기
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">이민기, 프린세스 메이커</div>
+    <div class="content_member">
+        <div class="card_box">
+            <div class="item front"><img class="sizing" src="https://url.kr/u2139d"></div>
+            <div class="item back"><img src="../static/image/source/enfp.png"></div>
         </div>
-        <div class="hp_bar"></div>
-        <div class="mp_bar"></div>
-        <div class="icon_member">
-            <div class="icon_member_textbox">블로그GoGo~</div>
-            <a href="http://goldvedio.tistory.com" target='_blank'><img class="blog_link"
-                    src="../static/image/character/phantom.png">
-            </a>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p><a class="open-modal 1">스테이터스 확인</a></p>
         </div>
     </div>
-
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+    <div class="icon_member">
+        <div class="icon_member_textbox">블로그GoGo~</div>
+        <a href="https://velog.io/@psjlmk" target='_blank'><img class="blog_link"
+                                                                src="../static/image/character/iori.png">
+        </a>
 
     </div>
+</div>
 
-    <script>
+<a id="kim"></a>
+<div class="wrap_Member">
+    멤버카드 김하진
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">김하진, 취미부자 수집가</div>
+    <div class="content_member">
+        <div class="card_box">
+            <div class="item front"><img class="sizing" src="https://url.kr/cja8yx"></div>
+            <div class="item back"><img src="../static/image/source/enfp.png"></div>
+        </div>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p><a class="open-modal 2">스테이터스 확인</a></p>
+        </div>
+    </div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+    <div class="icon_member">
+        <div class="icon_member_textbox">블로그GoGo~</div>
+        <a href="https://github.com/haajinkim/Record_blog" target='_blank'><img class="blog_link"
+                                                                                src="../static/image/character/mario.png">
+        </a>
+    </div>
+</div>
 
-    </script>
+<a id="hwang"></a>
+<div class="wrap_Member">
+    멤버카드 황영상
+    <div class="title_member">캐릭터 선택</div>
+    <div class="name_member">황영상, 하루종일 몽상가</div>
+    <div class="content_member">
+        <div class="card_box">
+            <div class="item front"><img class="sizing"
+                                         src="https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa8d9002c-b736-4908-832b-4ed8fad4c4a4%2FKakaoTalk_Photo_2022-04-12-12-29-09.jpeg?table=block&id=7d24aa4f-61d2-431c-abc6-9200acae0b91&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2">
+            </div>
+            <div class="item back"><img src="../static/image/source/infp.png"></div>
+        </div>
+        <div class="desc_member">
+            <p>ENTP</p>
+            <p>여행자</p>
+            <p>홈쿠커</p>
+            <p class="open-modal 0">스테이터스 확인</p>
+        </div>
+    </div>
+    <div class="hp_bar"></div>
+    <div class="mp_bar"></div>
+    <div class="icon_member">
+        <div class="icon_member_textbox">블로그GoGo~</div>
+        <a href="http://goldvedio.tistory.com" target='_blank'><img class="blog_link"
+                                                                    src="../static/image/character/phantom.png">
+        </a>
+    </div>
+</div>
+
+
+</div>
+<script src="../static/js/js.js"></script>
+
 </body>
