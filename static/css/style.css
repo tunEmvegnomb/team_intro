@@ -18,7 +18,7 @@
 body {
     font-family: 'ugly', DOSSaemmul;
     margin: 0;
-    background-color: blue;
+    background-color: darkgoldenrod;
     border-style: solid;
     border-width: 80px 80px 80px 80px;
     -moz-border-image: url('../../static/image/source/outer.png') 100 100 100 100 repeat repeat;
@@ -96,10 +96,10 @@ body {
     width: 800px;
     height: 700px;
     /*background-color: skyblue;*/
-    background: rgba(137, 118, 84, 60%);
-    border: 10px solid #cdba98;
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px grey inset, 0 0 0 2px white;
+    background: #b16c2a;
+    border: 20px solid rgba(210, 153, 53);
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px grey inset, 0 0 0 1px black;
 }
 
 .img_team, .img_member {
