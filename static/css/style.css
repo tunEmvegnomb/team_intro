@@ -128,7 +128,7 @@ body {
 .title_team {
     width: 600px;
     height: 100px;
-    margin: 40px 0 0 30px;
+    margin: 22px 0 0 30px;
 }
 
 .title_team > h2 {
@@ -477,4 +477,41 @@ modal.show가 불리면서 모달창이 켜짐*/
     font-size: 60px;
     margin-left: 60px;
     cursor: pointer;
+}
+
+.icons{
+    display: flex;
+    width: 1000px;
+    height: 100px;
+    justify-content: space-around;
+    vertical-align: bottom;
+    /*background-color: black;*/
+    margin-top: 70px;
+    padding-left: 100px;
+}
+
+.sd_joo, .sd_lee, .sd_kim, .sd_hwang {
+    width: 100px;
+    height: 100px;
+    background-color: beige;
+}
+.sd_joo{
+    background-image: url('../../static/image/character/sd_1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.sd_lee{
+    background-image: url('../../static/image/character/sd_2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.sd_kim{
+    background-image: url('../../static/image/character/sd_3.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.sd_hwang{
+    background-image: url('../../static/image/character/sd_4.jpg');
+    background-position: center;
+    background-size: cover;
 }
