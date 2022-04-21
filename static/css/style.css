@@ -90,11 +90,17 @@ body {
     box-shadow: 0 0 0 1px grey inset, 0 0 0 2px white;
 }
 
+.wrap_teamIntro{margin-top: 1000px;}
+
 .img_team, .img_member {
     background-color: gray;
     width: 300px;
     height: 400px;
     margin: 40px 0 0 40px;
+
+    border: 3px solid papayawhip;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px grey inset;
 }
 
 .content_team {

@@ -1,15 +1,19 @@
 $(document).ready(function () {
-    now_status(), sizing()
-    $(".icon_member").hover(function () {
-        $(".icon_member_textbox").show()
-    },
-        function () {
-            $(".icon_member_textbox").hide()
-        })
-
-    console.log('js test')
+    now_status(),
+        sizing(),
+        member_show(),
+        member_hide()
 })
 
+function member_show() {
+    $(".icon_member").hover(function () {
+        $(".icon_member_textbox").show()
+    })
+}
+
+function member_hide() {
+    $(".icon_member_textbox").hide()
+}
 
 function now_status() {
     let today = new Date();
@@ -54,25 +58,25 @@ function now_status() {
 function goToScroll_joo() {
     var location = document.querySelector("#joo").offsetTop;
     console.log(location)
-    window.scrollTo({ top: location, behavior: 'smooth' });
+    window.scrollTo({top: location, behavior: 'smooth'});
 }
 
 function goToScroll_lee() {
     var location = document.querySelector("#lee").offsetTop;
     console.log(location)
-    window.scrollTo({ top: location, behavior: 'smooth' });
+    window.scrollTo({top: location, behavior: 'smooth'});
 }
 
 function goToScroll_kim() {
     var location = document.querySelector("#kim").offsetTop;
     console.log(location)
-    window.scrollTo({ top: location, behavior: 'smooth' });
+    window.scrollTo({top: location, behavior: 'smooth'});
 }
 
 function goToScroll_hwang() {
     var location = document.querySelector("#hwang").offsetTop;
     console.log(location)
-    window.scrollTo({ top: location, behavior: 'smooth' });
+    window.scrollTo({top: location, behavior: 'smooth'});
 }
 
 function sizing() {
