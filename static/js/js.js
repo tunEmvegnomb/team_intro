@@ -73,6 +73,12 @@ function goToScroll_hwang() {
     window.scrollTo({ top: location, behavior: 'smooth' });
 }
 
+function goToScroll_team(){
+    var location = document.querySelector(".wrap_teamIntro").offsetTop;
+    console.log(location)
+    window.scrollTo({ top: location, behavior: 'smooth' });
+}
+
 function sizing() {
     $('.front').addClass('sizing')
 }
