@@ -9,10 +9,11 @@
     /*font-family: 'NeoDunggeunmo';*/
     font-family: 'NeoDunggeunmo Code';
 }
+
 body {
     margin: 0;
     background-color: #666666;
-    height: 100vh + 10px;
+    height: 100vh+10px;
 }
 
 @keyframes fade_in_left {
@@ -38,6 +39,7 @@ body {
     align-items: center;
     align-content: center;
 }
+
 .old_Boy {
     overflow: hidden;
     position: relative;
@@ -47,10 +49,12 @@ body {
     font-size: 75px;
     color: #FFFFFF;
 }
+
 .flex {
     display: flex;
     justify-content: space-around;
 }
+
 .stageimg {
     width: 100vw;
     height: 80px;
@@ -64,6 +68,7 @@ body {
     margin: 30px;
     width: 100%;
 }
+
 .charimg {
     bottom: 0px;
     display: flex;
@@ -72,37 +77,47 @@ body {
     width: 80px;
     height: 80px;
 }
+
 .wrap_teamIntro, .wrap_teamGoal, .wrap_teamRule, .wrap_Member {
     position: relative;
     margin: 500px auto;
     width: 800px;
     height: 700px;
-    background-color: skyblue;
+    /*background-color: skyblue;*/
+    background: rgba(137, 118, 84, 60%);
+    border: 10px solid #cdba98;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px grey inset, 0 0 0 2px white;
 }
+
 .img_team, .img_member {
     background-color: gray;
     width: 300px;
     height: 400px;
     margin: 40px 0 0 40px;
 }
+
 .content_team {
     display: flex;
 }
+
 .title_team {
     width: 400px;
     height: 100px;
     margin: 40px 0 0 50px;
 }
 
-.title_team > h2{
+.title_team > h2 {
     font-size: 30px;
 }
+
 .desc_team {
     width: 400px;
     height: 400px;
     margin: 5px auto 5px auto;
     font-size: 15px;
 }
+
 .title_member {
     /*background-color: aqua;*/
     width: 400px;
@@ -111,6 +126,7 @@ body {
     font-size: 25px;
     text-align: center;
 }
+
 .name_member {
     /*background-color: blueviolet;*/
     width: 600px;
@@ -119,10 +135,12 @@ body {
     font-size: 15px;
     text-align: center;
 }
+
 .content_member {
     margin-top: 10px;
     display: flex;
 }
+
 .desc_member {
     /*background-color: darkorange;*/
     text-align: center;
@@ -132,6 +150,7 @@ body {
     text-align: left;
     padding-left: 0px;
 }
+
 /* 멤버카드 우하단 아이콘 */
 .icon_member {
     position: absolute;
@@ -149,10 +168,12 @@ body {
     right: -60px;
     display: none;
 }
+
 .blog_link {
     width: 70px;
     height: 70px;
 }
+
 /*3D Rotate 구현*/
 .card_box {
     width: 300px;
@@ -161,6 +182,7 @@ body {
     margin-bottom: 10px;
     /*perspective: 300px;*/
 }
+
 .card_box .item {
     width: 300px;
     height: 400px;
@@ -169,19 +191,24 @@ body {
     backface-visibility: hidden;
     transition: 1.5s;
 }
+
 .card_box .item.front {
     position: absolute;
     transform: rotateY(0deg);
 }
+
 .card_box:hover .item.front {
     transform: rotateY(180deg);
 }
+
 .card_box .item.back {
     transform: rotateY(-180deg);
 }
+
 .card_box:hover .item.back {
     transform: rotateY(0deg);
 }
+
 .hp_bar {
     width: 300px;
     height: 30px;
@@ -191,6 +218,7 @@ body {
     background-position: center;
     background-size: cover;
 }
+
 .mp_bar {
     width: 300px;
     height: 30px;
@@ -200,7 +228,8 @@ body {
     background-position: center;
     background-size: cover;
 }
-.stageimg{
+
+.stageimg {
     z-index: 3;
     width: 100vw;
     height: 80px;
@@ -209,47 +238,60 @@ body {
 .item {
     z-index: 1
 }
+
 /*  백그라운드 이미지 넣기 용도  */
 .hp_1 {
     background-image: url('../../static/image/hp_1.png');
 }
+
 .hp_2 {
     background-image: url('../../static/image/hp_2.png');
 }
+
 .hp_3 {
     background-image: url('../../static/image/hp_3.png');
 }
+
 .hp_4 {
     background-image: url('../../static/image/hp_4.png');
 }
+
 .hp_0 {
     background-image: url('../../static/image/hp_0.png');
 }
+
 .mp_1 {
     background-image: url('../../static/image/mp_1.png');
 }
+
 .mp_2 {
     background-image: url('../../static/image/mp_2.png');
 }
+
 .mp_3 {
     background-image: url('../../static/image/mp_3.png');
 }
+
 .mp_4 {
     background-image: url('../../static/image/mp_4.png');
 }
+
 .mp_0 {
     background-image: url('../../static/image/mp_0.png');
 }
+
 /*  폰트 관련  */
 .desc_team > li {
     margin: 20px 0 20px 0;
     padding-top: 50px;
 }
+
 /* 카드 이미징 관련 */
 .sizing {
     width: 300px;
     height: 400px
 }
+
 .mybtn {
     z-index: 11;
     position: absolute;
@@ -261,16 +303,18 @@ body {
     border: 1px groove white;
     font-size: 15px;
     background-color: gray;
-    
+
 }
+
 .mybtn:hover {
     border: 5px solid white;
     font-size: 15px;
 }
+
 /* .wrap_btn_box{
     width: 30px;
 } */
-.wrap_btn{
+.wrap_btn {
     width: 110px;
     position: center;
     margin: 80px auto;
