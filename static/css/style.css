@@ -19,7 +19,7 @@
 body {
     font-family: 'ugly', 'dosSam';
     margin: 0;
-    background-color: blue;
+    background-color: #9c5505;
     border-style: solid;
     border-width: 80px 80px 80px 80px;
     border-image: url('../../static/image/source/outer.png') 100 round
@@ -42,7 +42,6 @@ body {
 }
 
 .text_box {
-    padding-top: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +53,7 @@ body {
     position: relative;
     font-style: normal;
     font-weight: 200;
-    font-size: 75px;
+    font-size: 150px;
     color: #FFFFFF;
 }
 
@@ -85,10 +84,6 @@ body {
     display: none;
 }
 
-.wrap_teamIntro {
-    margin-top: 1500px;
-}
-
 .wrap_teamIntro, .wrap_teamGoal, .wrap_teamRule, .wrap_Member {
     position: relative;
     margin: 500px auto;
@@ -100,6 +95,11 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 0 1px grey inset, 0 0 0 2px white;
 }
+
+.wrap_teamIntro {
+    margin-top: 1500px;
+}
+
 
 .img_team, .img_member {
     background-color: gray;
@@ -311,9 +311,9 @@ body {
 .game-start {
     display: block;
     width: 400px;
-    margin: 430px auto 0 auto;
+    margin: 300px auto 0 auto;
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     text-decoration: underline;
     text-underline-position: under;
     animation: blink-effect 1s step-end infinite;

@@ -80,7 +80,7 @@ function goToScroll_team() {
     console.log(location)
     setTimeout(function(){
         window.scrollTo({top: location-100, behavior: 'smooth'});
-    },3000)
+    },4000)
 
 }
 
@@ -89,7 +89,7 @@ function sizing() {
 }
 
 function music() {
-    $('.mybtn').hide()
+    $('.game-start').hide()
     const audioContainer = document.querySelector('#audioContainer');
     audioContainer.loop = true
     audioContainer.play()
