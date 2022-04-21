@@ -138,8 +138,8 @@ body {
     /*background-color: aqua;*/
     width: 400px;
     height: 30px;
-    margin: 10px auto;
-    font-size: 25px;
+    margin: 10px auto 20px auto;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -148,7 +148,7 @@ body {
     width: 600px;
     height: 30px;
     margin: 5px auto;
-    font-size: 15px;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -161,8 +161,8 @@ body {
     /*background-color: darkorange;*/
     text-align: center;
     width: 500px;
-    margin: 0px 0 0 50px;
-    font-size: 15px;
+    margin: 30px 0 0 50px;
+    font-size: 40px;
     text-align: left;
     padding-left: 0px;
 }
@@ -194,7 +194,7 @@ body {
 .card_box {
     width: 300px;
     height: 400px;
-    margin: 0px 0 0 30px;
+    margin: 60px 0 0 150px;
     margin-bottom: 10px;
     /*perspective: 300px;*/
 }
@@ -202,7 +202,9 @@ body {
 .card_box .item {
     width: 300px;
     height: 400px;
-    border: 5px solid #828282;
+    border: 7px solid #cdba98;
+    box-shadow: 0 0 0 3px #897654 inset, 0 0 0 1px #fefefe;
+    border-radius: 2px;
     font-size: 35px;
     backface-visibility: hidden;
     transition: 1.5s;
@@ -228,7 +230,7 @@ body {
 .hp_bar {
     width: 300px;
     height: 30px;
-    margin: 15px 0 0 35px;
+    margin: 15px 0 0 150px;
     /* div 이미지 넣기 */
     background-image: url("../image/source/hp_4.png");
     background-position: center;
@@ -238,7 +240,7 @@ body {
 .mp_bar {
     width: 300px;
     height: 30px;
-    margin: 15px 0 0 35px;
+    margin: 15px 0 0 150px;
     /* div 이미지 넣기 */
     background-image: url('../image/source/mp_4.png');
     background-position: center;
@@ -445,3 +447,10 @@ modal.show가 불리면서 모달창이 켜짐*/
     color: dimgray;
     font-size: 40px;
 }
+
+.text_shadow{
+    text-shadow: 0 0 5px black, 0 0 50px black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
