@@ -78,7 +78,7 @@ $(document).ready(function () {
         setTimeout(function () {
             var location = document.querySelector(".wrap_teamIntro").offsetTop;
             console.log(location)
-            window.scrollTo({top: location, behavior: 'smooth'});
+            window.scrollTo({top: location-100, behavior: 'smooth'});
         }, 5000)
 
     }
