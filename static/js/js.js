@@ -294,3 +294,24 @@ function typing_lee() {
 
     setInterval(typing, 200)
 }
+function goToScroll_team1(){
+    var location = document.querySelector(".wrap_teamIntro").offsetTop;
+    console.log(location)
+    window.scrollTo({top: location-100, behavior: 'smooth'});
+}
+
+function goToScroll_team2(){
+    var location = document.querySelector(".wrap_teamGoal").offsetTop;
+    console.log(location)
+    window.scrollTo({top: location-100, behavior: 'smooth'});
+}
+
+function goToScroll_team3(){
+    var location = document.querySelector(".wrap_teamRule").offsetTop;
+    console.log(location)
+    window.scrollTo({top: location-100, behavior: 'smooth'});
+}
+
+function goToScroll_top() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}

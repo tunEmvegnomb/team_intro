@@ -122,7 +122,7 @@ body {
 .content_team {
     display: flex;
     width: 1000px;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .title_team {
@@ -481,7 +481,7 @@ modal.show가 불리면서 모달창이 켜짐*/
 
 .icons{
     display: flex;
-    width: 1000px;
+    width: 900px;
     height: 100px;
     justify-content: space-around;
     vertical-align: bottom;
