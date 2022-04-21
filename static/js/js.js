@@ -81,7 +81,6 @@ function goToScroll_team() {
     console.log(location)
     window.scrollTo({ top: location, behavior: 'smooth' });
     },5000)
-
 }
 
 function sizing() {
