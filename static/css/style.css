@@ -13,7 +13,7 @@
 body {
     margin: 0;
     background-color: #666666;
-    height: 100vh+10px;
+    height: 100vh;
 }
 
 @keyframes fade_in_left {
