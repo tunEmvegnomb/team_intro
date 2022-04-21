@@ -143,8 +143,9 @@ const team_summary = [
 //모달로직을 수행하기 위한 object들
 const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
+const x_button = document.querySelector('.x-button');
 let btns = document.querySelectorAll(".open-modal");
-<!--    데이터 변경을 위한 각각의 javascript object값을 각 변수에 저장-->
+// 데이터 변경을 위한 각각의 javascript object값을 각 변수에 저장
 const status_name = document.getElementById('status-name');
 const status_nickname = document.getElementById('status-nickname');
 const status_mbti = document.getElementById('status-mbti');
@@ -193,6 +194,13 @@ modal.addEventListener('click', (event) => {
 document.addEventListener('keyup', function (e) {
     if ((e.key === "Escape") && (modal.classList.contains('show'))) {
         modal.classList.toggle('show')
+        body.style.overflow = 'auto';
+    }
+})
+
+x_button.addEventListener('click', function () {
+    modal.classList.toggle('show');
+    if (!modal.classList.contains('show')) {
         body.style.overflow = 'auto';
     }
 })
