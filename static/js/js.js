@@ -1,13 +1,5 @@
 $(document).ready(function () {
-    now_status(), sizing(), typing_hwang(), typing_joo(), typing_kim(), typing_lee()
-    $(".icon_member").hover(function () {
-            $(".icon_member_textbox").show()
-        },
-        function () {
-            $(".icon_member_textbox").hide()
-        })
-
-    console.log('js test')
+    now_status()
 })
 
 
@@ -15,8 +7,6 @@ function now_status() {
     let today = new Date();
     let hours = today.getHours();
     console.log(hours)
-
-
     // 기능설계
     // MP부터 닳고 HP닳기
     // 총 10칸을 9시부터 1시간 간격으로 닳게 하기
@@ -25,14 +15,22 @@ function now_status() {
 
     // MP부터 10시부터~15시까지
 
+    if (hours <= 9) {
+        $('.hp_bar').removeClass('hp_0').addClass('hp_4')
+        $('.mp_bar').removeClass('mp_0').addClass('mp_4')
+    }
     if (hours >= 10 && hours < 11) {
+        $('.hp_bar').removeClass('hp_0').addClass('hp_4')
         $('.mp_bar').removeClass('mp_4').addClass('mp_3')
     } else if (hours >= 11 && hours < 12) {
-        $('.mp_bar').removeClass('mp_3').addClass('mp_3')
-    } else if (hours >= 12 && hours < 13) {
-        $('.mp_bar').removeClass('mp_2').addClass('mp_1')
+        $('.hp_bar').removeClass('hp_0').addClass('hp_4')
+        $('.mp_bar').removeClass('mp_4').addClass('mp_2')
+    } else if (hours >= 12 && hours < 14) {
+        $('.hp_bar').removeClass('hp_0').addClass('hp_4')
+        $('.mp_bar').removeClass('mp_4').addClass('mp_1')
     } else if (hours >= 14 && hours < 15) {
-        $('.mp_bar').removeClass('mp_1').addClass('mp_0')
+        $('.hp_bar').removeClass('hp_0').addClass('hp_4')
+        $('.mp_bar').removeClass('mp_4').addClass('mp_0')
     }
 
     // HP 15시부터~21시까지
@@ -40,57 +38,21 @@ function now_status() {
         $('.hp_bar').removeClass('hp_4').addClass('hp_3')
         $('.mp_bar').removeClass('mp_4').addClass('mp_0')
     } else if (hours >= 16 && hours < 17) {
-        $('.hp_bar').removeClass('hp_3').addClass('hp_2')
+        $('.hp_bar').removeClass('hp_4').addClass('hp_2')
         $('.mp_bar').removeClass('mp_4').addClass('mp_0')
     } else if (hours >= 17 && hours < 18) {
-        $('.hp_bar').removeClass('hp_2').addClass('hp_1')
+        $('.hp_bar').removeClass('hp_4').addClass('hp_1')
         $('.mp_bar').removeClass('mp_4').addClass('mp_0')
     } else if (hours >= 19 && hours < 20) {
-        $('.hp_bar').removeClass('hp_1').addClass('hp_0')
+        $('.hp_bar').removeClass('hp_4').addClass('hp_0')
         $('.mp_bar').removeClass('mp_4').addClass('mp_0')
 
     } else {
-        $('.hp_bar').removeClass('hp_1').addClass('hp_0')
-        $('.mp_bar').removeClass('mp_1').addClass('mp_0')
+        $('.hp_bar').removeClass('hp_4').addClass('hp_0')
+        $('.mp_bar').removeClass('mp_4').addClass('mp_0')
     }
 }
 
-function goToScroll_joo() {
-    var location = document.querySelector("#joo").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
-}
-
-function goToScroll_lee() {
-    var location = document.querySelector("#lee").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
-}
-
-function goToScroll_kim() {
-    var location = document.querySelector("#kim").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
-}
-
-function goToScroll_hwang() {
-    var location = document.querySelector("#hwang").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
-}
-
-function goToScroll_team() {
-    var location = document.querySelector(".wrap_teamIntro").offsetTop;
-    console.log(location)
-    setTimeout(function () {
-        window.scrollTo({top: location - 100, behavior: 'smooth'});
-    }, 4000)
-
-}
-
-function sizing() {
-    $('.front').addClass('sizing')
-}
 
 function music() {
     $('.game-start').hide()
@@ -99,6 +61,10 @@ function music() {
     audioContainer.play()
     $('.charimg').css('display', 'block');
     $('#char').addClass('ani_fade_in_left')
+    $(".t_loading").css('display', 'block');
+    setTimeout(() => {
+        $(".t_loading").css('display', 'none');
+    }, 4000);
 }
 
 const team_summary = [
@@ -175,7 +141,7 @@ function open_modal(e) {
     // 모달을 화면을 보여준다.
 
     modal.style.top = ((window.innerHeight - modal.scrollHeight) / 2 + window.scrollY) + "px"
-    modal.style.left = ((window.innerHeight - modal.scrollWidth) / 2 + window.scrollX) + "px"
+    modal.style.left = ((window.innerWidth - modal.scrollWidth) / 2 + window.scrollX) + "px"
     modal.classList.toggle('show');
     if (modal.classList.contains('show')) {
         body.style.overflow = 'hidden';
@@ -205,113 +171,21 @@ x_button.addEventListener('click', function () {
     }
 })
 
-// 타이핑 애니메이션
-function typing_hwang() {
-    "use strict";
-    const content = "이민기, 프린세스 메이커"
-    const text = document.querySelector(".text2")
-    let index = 0;
-
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
-
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
-
-    setInterval(typing, 200)
-}
-function typing_kim() {
-    "use strict";
-    const content = "김하진, 취미부자 수집가"
-    const text = document.querySelector(".text3")
-    let index = 0;
-
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
-
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
-
-    setInterval(typing, 200)
-}
-function typing_joo() {
-    "use strict";
-    const content = "주정한, 자유로운 여행자"
-    const text = document.querySelector(".text1")
-    let index = 0;
-
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
-
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
-
-    setInterval(typing, 200)
-}
-function typing_lee() {
-    "use strict";
-    const content = "황영상, 하루종일 몽상가"
-    const text = document.querySelector(".text")
-    let index = 0;
-
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
-
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
-
-    setInterval(typing, 200)
-}
-function goToScroll_team1(){
-    var location = document.querySelector(".wrap_teamIntro").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location-100, behavior: 'smooth'});
+function goToScroll(name) {
+    var location = document.querySelector("#" + name).offsetTop;
+    window.scrollTo({top: location - 100, behavior: 'smooth'});
 }
 
-function goToScroll_team2(){
-    var location = document.querySelector(".wrap_teamGoal").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location-100, behavior: 'smooth'});
-}
+function goToScroll_start() {
+    setTimeout(function () {
+        var location = document.querySelector("#wrap_teamIntro").offsetTop;
+        window.scrollTo({top: location-100, behavior: 'smooth'});
+    }, 4000)
 
-function goToScroll_team3(){
-    var location = document.querySelector(".wrap_teamRule").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location-100, behavior: 'smooth'});
 }
 
 function goToScroll_top() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
+
