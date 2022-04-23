@@ -1,16 +1,16 @@
+// document.ready function : 화면이 로딩되면 호출하는 함수
 $(document).ready(function () {
     now_status()
-
-
     console.log('js test')
 })
 
-
+// 현재 시각을 받아 HP, MP 이미지를 바꾸는 함수
 function now_status() {
+    // Date(): 오늘의 날짜, 시간 값을 받아옴
     let today = new Date();
+    // getHours(): 날짜 형태 값 중에서 시각만 따옴 (오후 1시: 13)
     let hours = today.getHours();
-    console.log(hours)
-
+    console.log('현재시각',hours)
 
     // 기능설계
     // MP부터 닳고 HP닳기
@@ -18,11 +18,13 @@ function now_status() {
     // 점심과 저녁시간 빼기
     // removeClass, addClass 활용
 
-    // MP부터 10시부터~15시까지
+    // 9시가 되면 다시 충전
     if (hours == 9) {
         $('.hp_bar').removeClass('hp_0').addClass('hp_4')
         $('.mp_bar').removeClass('mp_0').addClass('mp_4')
-    } else if (hours >= 10 && hours < 11) {
+    }
+    // MP부터 10시부터~15시까지
+     else if (hours >= 10 && hours < 11) {
         $('.mp_bar').removeClass('mp_4').addClass('mp_3')
     } else if (hours >= 11 && hours < 12) {
         $('.mp_bar').removeClass('mp_3').addClass('mp_2')
@@ -52,34 +54,44 @@ function now_status() {
     }
 }
 
-// 1. 반복되는 것은 무엇인가?
-// 2. 다른 것은 무엇인가?
 
+// 스크롤 이동 함수 설계
+//
+// 1. 반복되는 것은 무엇인가? : offsetTop을 받는 변수, 윈도우 스크롤 이동 코드
+// 2. 다른 것은 무엇인가? : 인자로 받아와야할 셀렉터 값
+//
+// 셀렉터 값을 함수의 파라미터로 받아오고, 아이디 선택자인 # 문자열과 인자를 합해 변수를 설정하기
+
+// 아이디 값으로 이동하는 스크롤 함수
 function goToScroll(name) {
+    // 셀렉터 값의 윗부분 위치를 받아오는 querySelector().offsetTop
     var location = document.querySelector('#' + name).offsetTop;
+    // 위치 값을 정해 부드러운 모션으로 스크롤 이동하는 window.scrollTo()
     window.scrollTo({top: location - 100, behavior: 'smooth'});
 }
+// 메인에서 뮤직스타트 버튼을 누르면 딜레이를 주는 스크롤 함수
+// 팀 소개 화면에만 해당하므로 코드 수정 필요
 function goToScroll_team(name) {
     var location = document.querySelector("." + name).offsetTop;
+    // 일정 시간 동안 지연시켜 작동되는 setTimeout()
+    // setTimeout(함수 (){}, 지연시간(밀리세컨드)) 형식으로 구성
     setTimeout(function () {
         window.scrollTo({top: location - 100, behavior: 'smooth'});
     }, 4000)
-
 }
+// 화면 상단부로 보내는 스크롤 함수. top 값이 0이면 맨 위로 보냄
 function goToScroll_top() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
-
-function sizing() {
-    $('.front').addClass('sizing')
-}
-
+// 뮤직 스타트를 눌렀을 때, 작동하는 함수
 function music() {
     // 뮤직 스타트 숨기기
     $('.game-start').hide()
     // const = 상수, 값을 바꾸지 않을 경우 작성함, 데이터 값을 변경하려고 하면 Error
     const audioContainer = document.querySelector('#audioContainer');
+    // 음악 반복 재생 여부
     audioContainer.loop = true
+    // 음악 재생
     audioContainer.play()
     // 캐릭터 이미지를 안보이던 것에서 보이게 하기
     $('.charimg').css('display', 'block');
@@ -87,6 +99,7 @@ function music() {
     $('#char').addClass('ani_fade_in_left')
 }
 
+// 모달 창에 붙일 데이터 정의
 const team_summary = [
     {
         'name': '황영상',
@@ -131,6 +144,7 @@ const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
 const x_button = document.querySelector('.x-button');
 let btns = document.querySelectorAll(".open-modal");
+
 // 데이터 변경을 위한 각각의 javascript object값을 각 변수에 저장
 const status_name = document.getElementById('status-name');
 const status_nickname = document.getElementById('status-nickname');
@@ -139,6 +153,7 @@ const strong_point = document.getElementById('strong-point')
 const teaming_method = document.getElementById('teaming-method');
 const tmi_to_line = document.getElementById('tmi-to-line');
 const status_img_url = document.getElementById('status-image');
+
 // 모달을 제어하기 위해 전체 버튼들에 대해서 이벤트 리스너를 적용함
 [].forEach.call(btns, function (col) {
     col.addEventListener('click', (e) => {
@@ -158,8 +173,8 @@ function open_modal(e) {
     teaming_method.innerHTML = team_summary[num].teaming_method
     tmi_to_line.innerHTML = team_summary[num].tmi_to_line
     status_img_url.src = team_summary[num].img_url
-    // 모달을 화면을 보여준다.
 
+    // 모달을 화면을 보여준다.
     modal.style.top = ((window.innerHeight - modal.scrollHeight) / 2 + window.scrollY) + "px"
     modal.style.left = ((window.innerHeight - modal.scrollWidth) / 2 + window.scrollX) + "px"
     modal.classList.toggle('show');
@@ -177,62 +192,18 @@ modal.addEventListener('click', (event) => {
         }
     }
 });
+// ESC 키 입력 상황
 document.addEventListener('keyup', function (e) {
     if ((e.key === "Escape") && (modal.classList.contains('show'))) {
         modal.classList.toggle('show')
         body.style.overflow = 'auto';
     }
 })
-
+// 모달 내 X버튼 클릭 입력 상황
 x_button.addEventListener('click', function () {
     modal.classList.toggle('show');
     if (!modal.classList.contains('show')) {
         body.style.overflow = 'auto';
     }
 })
-
-
-// 기능설계
-//
-// 화면이 로딩되면, 이름 부분을 인자값으로 받아옴
-// 받아올 인자 값은 각각 네 개.(주, 이, 김, 황)
-//
-
-// // 타이핑 애니메이션
-// function typing_text() {
-//
-//     const text_joo = document.querySelector(".text1")
-//     const text_lee = document.querySelector(".text2")
-//     const text_kim = document.querySelector(".text3")
-//     const text_hwang = document.querySelector(".text")
-//
-//     var doc = [text_joo, text_lee, text_kim, text_hwang]
-//
-//     for (let i= 0; i<doc.length; i++){
-//
-//         console.log(doc[i])
-//     }
-//
-//     "use strict";
-//     // var content = "이민기, 프린세스 메이커"
-//     // const text = document.querySelector(".text2")
-//     let index = 0;
-//
-//     // 지연 시간
-//     function sleep(delay) {
-//         const start = new Date().getTime();
-//         while (new Date().getTime() < start + delay) ;
-//     }
-//
-//     function typing(text, content) {
-//         text.textContent += content[index++];
-//         if (index > content.length) {
-//             text.textContent = ""
-//             index = 0;
-//             sleep(1000);
-//         }
-//     }
-//
-//     setInterval(typing, 200)
-// }
 
