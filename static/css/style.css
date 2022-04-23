@@ -11,11 +11,6 @@
     unicode-range: U+AC00-D7A3;
 }
 
-@keyframes blink-effect {
-    50% {
-        opacity: 0;
-    }
-}
 
 * {
     color: white;
@@ -31,17 +26,23 @@ body {
     border-image: url('../../static/image/source/outer.png') 100 round
 }
 
+/* 캐릭터 화면등장 키프레임 */
 @keyframes fade_in_left {
+    /* 끝 */
     0% {
+        /* 불투명도: 0 안보임*/
         opacity: 0;
+        /* XYZ값 0: 좌측, 100%: 아래(-100%: 위), 대각선 */
         transform: translate3d(0, 100%, 0);
     }
+    /* 시작 */
     to {
         opacity: 10;
         transform: translateZ(0);
     }
 }
 
+/* 키프레임을 선언 */
 .ani_fade_in_left {
     position: relative;
     animation: fade_in_left 4s;
@@ -55,7 +56,10 @@ body {
 }
 
 .old_Boy {
+    /*간격을 벗어나면 글자가 잘림*/
     overflow: hidden;
+    /*겹치는 것을 방지하기 위해 넣어놓음*/
+    /*하위태그를 앱솔루트로 포지션 설정했을 때, 섞이지 않게 하기 위함*/
     position: relative;
     font-style: normal;
     font-weight: 200;
@@ -65,26 +69,25 @@ body {
 
 .flex {
     display: flex;
+    /* 전체 길이에서 마진을 줌 */
     justify-content: space-around;
-}
-
-.stageimg {
-    width: 100vw;
-    height: 80px;
 }
 
 .fixed {
     z-index: 10;
+    /* 끝에서 부터 간격을 벌려줌 */
     justify-content: space-between;
     position: fixed;
     bottom: 0;
     left: 0;
     margin: 0 0 30px 0;
+    /* 가로 값을  */
     width: 100%;
 }
 
 .charimg {
     bottom: 0px;
+    /* 숫자가 높을 수록 레이어 상단에 위치 */
     z-index: 6;
     width: 110px;
     height: 110px;
@@ -254,12 +257,6 @@ body {
     background-size: cover;
 }
 
-.stageimg {
-    z-index: 3;
-    width: 100vw;
-    height: 80px;
-}
-
 .item {
     z-index: 1
 }
@@ -316,6 +313,12 @@ body {
     width: 300px;
     height: 400px
 }
+/* game-start 클래스 키프레임 */
+@keyframes blink-effect {
+    50% {
+        opacity: 0;
+    }
+}
 
 /* 처음 애니매이팅과 음악을 담당하는 버튼 */
 .game-start {
@@ -324,11 +327,15 @@ body {
     margin: 500px auto 0 auto;
     text-align: center;
     font-size: 50px;
+    /* 글자 밑줄 속성 */
     text-decoration: underline;
+    /* 원래는 글자에 바짝 붙지만 under 옵션을 넣으면 떨어져서 나옴 */
     text-underline-position: under;
+    /* 키프레임 선언 왔다갔다를 무한대로 반복한다: 글자가 꺼졌다 켜짐 */
     animation: blink-effect 1s step-end infinite;
 }
 
+/* 퍼즈를 선언하면 애니메이팅을 멈출 수 있는 선택자 */
 .paused {
     animation-play-state: paused;
 }

@@ -1,11 +1,6 @@
 $(document).ready(function () {
-    now_status(), sizing(), typing_hwang(), typing_joo(), typing_kim(), typing_lee()
-    $(".icon_member").hover(function () {
-            $(".icon_member_textbox").show()
-        },
-        function () {
-            $(".icon_member_textbox").hide()
-        })
+    now_status()
+
 
     console.log('js test')
 })
@@ -24,11 +19,13 @@ function now_status() {
     // removeClass, addClass 활용
 
     // MP부터 10시부터~15시까지
-
-    if (hours >= 10 && hours < 11) {
+    if (hours == 9) {
+        $('.hp_bar').removeClass('hp_0').addClass('hp_4')
+        $('.mp_bar').removeClass('mp_0').addClass('mp_4')
+    } else if (hours >= 10 && hours < 11) {
         $('.mp_bar').removeClass('mp_4').addClass('mp_3')
     } else if (hours >= 11 && hours < 12) {
-        $('.mp_bar').removeClass('mp_3').addClass('mp_3')
+        $('.mp_bar').removeClass('mp_3').addClass('mp_2')
     } else if (hours >= 12 && hours < 13) {
         $('.mp_bar').removeClass('mp_2').addClass('mp_1')
     } else if (hours >= 14 && hours < 15) {
@@ -55,37 +52,22 @@ function now_status() {
     }
 }
 
-function goToScroll_joo() {
-    var location = document.querySelector("#joo").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
-}
+// 1. 반복되는 것은 무엇인가?
+// 2. 다른 것은 무엇인가?
 
-function goToScroll_lee() {
-    var location = document.querySelector("#lee").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
+function goToScroll(name) {
+    var location = document.querySelector('#' + name).offsetTop;
+    window.scrollTo({top: location - 100, behavior: 'smooth'});
 }
-
-function goToScroll_kim() {
-    var location = document.querySelector("#kim").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
-}
-
-function goToScroll_hwang() {
-    var location = document.querySelector("#hwang").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location, behavior: 'smooth'});
-}
-
-function goToScroll_team() {
-    var location = document.querySelector(".wrap_teamIntro").offsetTop;
-    console.log(location)
+function goToScroll_team(name) {
+    var location = document.querySelector("." + name).offsetTop;
     setTimeout(function () {
         window.scrollTo({top: location - 100, behavior: 'smooth'});
     }, 4000)
 
+}
+function goToScroll_top() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function sizing() {
@@ -93,11 +75,15 @@ function sizing() {
 }
 
 function music() {
+    // 뮤직 스타트 숨기기
     $('.game-start').hide()
+    // const = 상수, 값을 바꾸지 않을 경우 작성함, 데이터 값을 변경하려고 하면 Error
     const audioContainer = document.querySelector('#audioContainer');
     audioContainer.loop = true
     audioContainer.play()
+    // 캐릭터 이미지를 안보이던 것에서 보이게 하기
     $('.charimg').css('display', 'block');
+    // ani_fade_in_left 를 입히기
     $('#char').addClass('ani_fade_in_left')
 }
 
@@ -205,113 +191,48 @@ x_button.addEventListener('click', function () {
     }
 })
 
-// 타이핑 애니메이션
-function typing_hwang() {
-    "use strict";
-    const content = "이민기, 프린세스 메이커"
-    const text = document.querySelector(".text2")
-    let index = 0;
 
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
+// 기능설계
+//
+// 화면이 로딩되면, 이름 부분을 인자값으로 받아옴
+// 받아올 인자 값은 각각 네 개.(주, 이, 김, 황)
+//
 
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
+// // 타이핑 애니메이션
+// function typing_text() {
+//
+//     const text_joo = document.querySelector(".text1")
+//     const text_lee = document.querySelector(".text2")
+//     const text_kim = document.querySelector(".text3")
+//     const text_hwang = document.querySelector(".text")
+//
+//     var doc = [text_joo, text_lee, text_kim, text_hwang]
+//
+//     for (let i= 0; i<doc.length; i++){
+//
+//         console.log(doc[i])
+//     }
+//
+//     "use strict";
+//     // var content = "이민기, 프린세스 메이커"
+//     // const text = document.querySelector(".text2")
+//     let index = 0;
+//
+//     // 지연 시간
+//     function sleep(delay) {
+//         const start = new Date().getTime();
+//         while (new Date().getTime() < start + delay) ;
+//     }
+//
+//     function typing(text, content) {
+//         text.textContent += content[index++];
+//         if (index > content.length) {
+//             text.textContent = ""
+//             index = 0;
+//             sleep(1000);
+//         }
+//     }
+//
+//     setInterval(typing, 200)
+// }
 
-    setInterval(typing, 200)
-}
-function typing_kim() {
-    "use strict";
-    const content = "김하진, 취미부자 수집가"
-    const text = document.querySelector(".text3")
-    let index = 0;
-
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
-
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
-
-    setInterval(typing, 200)
-}
-function typing_joo() {
-    "use strict";
-    const content = "주정한, 자유로운 여행자"
-    const text = document.querySelector(".text1")
-    let index = 0;
-
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
-
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
-
-    setInterval(typing, 200)
-}
-function typing_lee() {
-    "use strict";
-    const content = "황영상, 하루종일 몽상가"
-    const text = document.querySelector(".text")
-    let index = 0;
-
-    function sleep(delay) {
-        const start = new Date().getTime();
-        while (new Date().getTime() < start + delay) ;
-    }
-
-    function typing() {
-        text.textContent += content[index++];
-        if (index > content.length) {
-            text.textContent = ""
-            index = 0;
-            sleep(1000);
-        }
-    }
-
-    setInterval(typing, 200)
-}
-function goToScroll_team1(){
-    var location = document.querySelector(".wrap_teamIntro").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location-100, behavior: 'smooth'});
-}
-
-function goToScroll_team2(){
-    var location = document.querySelector(".wrap_teamGoal").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location-100, behavior: 'smooth'});
-}
-
-function goToScroll_team3(){
-    var location = document.querySelector(".wrap_teamRule").offsetTop;
-    console.log(location)
-    window.scrollTo({top: location-100, behavior: 'smooth'});
-}
-
-function goToScroll_top() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}
