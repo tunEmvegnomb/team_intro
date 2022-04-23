@@ -125,9 +125,11 @@ const team_summary = [
 const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
 const x_button = document.querySelector('.x-button');
+// 스테이터스 확인하기 버튼이 동일하게 적용된 클래스값 리스트
 let btns = document.querySelectorAll(".open-modal");
 
 // 데이터 변경을 위한 각각의 javascript object값을 각 변수에 저장
+// 선언된 데이터를 그대로 초기화
 const status_name = document.getElementById('status-name');
 const status_nickname = document.getElementById('status-nickname');
 const status_mbti = document.getElementById('status-mbti');
@@ -137,7 +139,9 @@ const tmi_to_line = document.getElementById('tmi-to-line');
 const status_img_url = document.getElementById('status-image');
 // 모달을 제어하기 위해 전체 버튼들에 대해서 이벤트 리스너를 적용함
 [].forEach.call(btns, function (col) {
+    console.log(col)
     col.addEventListener('click', (e) => {
+        console.log(e)
         open_modal(e)
     })
 });
@@ -158,16 +162,20 @@ function open_modal(e) {
 
     modal.style.top = ((window.innerHeight - modal.scrollHeight) / 2 + window.scrollY) + "px"
     modal.style.left = ((window.innerWidth - modal.scrollWidth) / 2 + window.scrollX) + "px"
+    // 모달 키기
     modal.classList.toggle('show');
     if (modal.classList.contains('show')) {
+        // 스크롤바 숨기기
         body.style.overflow = 'hidden';
     }
 }
 
-// 모달이 켜졌을 때
+// 모달이 켜졌을 때/꺼졌을 때
 modal.addEventListener('click', (event) => {
     if (event.target === modal) {
+        // 모달이 켜졌다면 끄고, 꺼졌다면 키기
         modal.classList.toggle('show');
+        // 모달이 꺼진다면 스크롤바 다시 생기기
         if (!modal.classList.contains('show')) {
             body.style.overflow = 'auto';
         }

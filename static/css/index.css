@@ -125,6 +125,10 @@ body {
     border-radius: 3px;
     box-shadow: 0 0 0 1px grey inset;
 }
+/* 멤버카드 사이즈 맞추기 */
+.sizing{
+    width: 300px; height: 400px;
+}
 
 /* 팀카드 내용 부문 */
 .content_team {
