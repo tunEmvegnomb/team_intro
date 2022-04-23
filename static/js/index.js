@@ -1,10 +1,13 @@
+// 화면 로딩시 호출
 $(document).ready(function () {
     now_status()
 })
 
-
+// 시간이 지남에 따라 HP, MP가 깎이는 모션 기능
 function now_status() {
+    // 오늘 날짜 받아오기
     let today = new Date();
+    // 오늘 날짜 값의 시각 부분 만 가져오기
     let hours = today.getHours();
     console.log(hours)
     // 기능설계
@@ -16,7 +19,9 @@ function now_status() {
     // MP부터 10시부터~15시까지
 
     if (hours <= 9) {
+        // HP바가 0칸인 이미지를 클래스를 제거하고 4칸인 이미지 클래스를 삽입
         $('.hp_bar').removeClass('hp_0').addClass('hp_4')
+        // MP바가 0칸인 이미지를 클래스를 제거하고 4칸인 이미지 클래스를 삽입
         $('.mp_bar').removeClass('mp_0').addClass('mp_4')
     }
     if (hours >= 10 && hours < 11) {
@@ -47,26 +52,36 @@ function now_status() {
         $('.hp_bar').removeClass('hp_4').addClass('hp_0')
         $('.mp_bar').removeClass('mp_4').addClass('mp_0')
 
+    // 20시부터 8시까지
     } else {
         $('.hp_bar').removeClass('hp_4').addClass('hp_0')
         $('.mp_bar').removeClass('mp_4').addClass('mp_0')
     }
 }
 
-
+// 음악 재생, 애니메이션 기능
 function music() {
+    // 뮤직스타트 버튼 숨기기
     $('.game-start').hide()
+    // 음악 재생 기능
     const audioContainer = document.querySelector('#audioContainer');
+    // 음악 반복 재생 여부
     audioContainer.loop = true
+    // 음악 재생
     audioContainer.play()
+    // 보이지 않던 캐릭터 이미지 보이기
     $('.charimg').css('display', 'block');
+    // 캐릭터 위에서 나오는 연출 애니메이션 클래스 삽입
     $('#char').addClass('ani_fade_in_left')
+    // 잠시 기다려주세요 문자열 보이기 클래스
     $(".t_loading").css('display', 'block');
+    // 4초 뒤(4000ms)에 다시 문자열 숨기기
     setTimeout(() => {
         $(".t_loading").css('display', 'none');
     }, 4000);
 }
 
+// 모달에 동적으로 붙일 데이터 선언
 const team_summary = [
     {
         'name': '황영상',
@@ -111,6 +126,7 @@ const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
 const x_button = document.querySelector('.x-button');
 let btns = document.querySelectorAll(".open-modal");
+
 // 데이터 변경을 위한 각각의 javascript object값을 각 변수에 저장
 const status_name = document.getElementById('status-name');
 const status_nickname = document.getElementById('status-nickname');
@@ -157,13 +173,14 @@ modal.addEventListener('click', (event) => {
         }
     }
 });
+// ESC 키를 눌렀을 때
 document.addEventListener('keyup', function (e) {
     if ((e.key === "Escape") && (modal.classList.contains('show'))) {
         modal.classList.toggle('show')
         body.style.overflow = 'auto';
     }
 })
-
+// 모달 폼의 X 버튼을 클릭했을 때
 x_button.addEventListener('click', function () {
     modal.classList.toggle('show');
     if (!modal.classList.contains('show')) {
@@ -171,19 +188,27 @@ x_button.addEventListener('click', function () {
     }
 })
 
+// 스크롤 이동 기능
+// 클래스, 아이디 값을 인자로 받아 offsetTop 밸류 초기화
+// 초기화된 offsetTop 값을 위치로 이동
 function goToScroll(name) {
     var location = document.querySelector("#" + name).offsetTop;
     window.scrollTo({top: location - 100, behavior: 'smooth'});
 }
 
+// 뮤직스타트 버튼을 누르면 4초 뒤에 팀소개로 이동하는 기능
 function goToScroll_start() {
+    // 4000ms(4초) 뒤에 함수 실행
     setTimeout(function () {
+        // querySelector().offsetTop 으로 위쪽 위치좌표 밸류 받아오기
         var location = document.querySelector("#wrap_teamIntro").offsetTop;
+        // 해당 위치로 스크롤 이동, 부드러운 모션 추가
         window.scrollTo({top: location-100, behavior: 'smooth'});
     }, 4000)
 
 }
 
+// 화면 맨 위로 스크롤
 function goToScroll_top() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
