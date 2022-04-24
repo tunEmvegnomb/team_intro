@@ -2,15 +2,15 @@
 /* 한글이 적용되지 않는 이슈가 있어 사용되지 않음 */
 @font-face {
     font-family: "ugly";
-    src: url("../../static/font/Ugly Byte Free Trial-80da.woff") format("woff"),
-    url("../../static/font/Ugly Byte Free Trial-d5a7.woff2") format("woff2");
+    src: url(".. Byte Free Trial-80da.woff") format("woff"),
+    url(".. Byte Free Trial-d5a7.woff2") format("woff2");
     unicode-range: U+0061-007A;
 }
 /* 도스샘물체 ttf 파일 */
 /* 트루타입 폰트가 크롬에서 적용되지 않는 현상이 있어 사용되지 않음 */
 @font-face {
     font-family: 'dosSam';
-    src: url("../../static/font/DOSSaemmul.ttf");
+    src: url("..aemmul.ttf");
     unicode-range: U+AC00-D7A3;
 }
 
@@ -40,7 +40,7 @@ body {
     background-color: #9c5505;
     border-style: solid;
     border-width: 80px 80px 80px 80px;
-    border-image: url('../../static/image/source/outer.png') 100 round
+    border-image: url('..rce/outer.png') 100 round
 }
 
 /* 캐릭터 이동 애니메이션 키프레임 */
@@ -397,25 +397,25 @@ body {
 }
 
 .sd_joo {
-    background-image: url('../../static/image/character/sd_1.jpg');
+    background-image: url('..racter/sd_1.jpg');
     background-position: center;
     background-size: cover;
 }
 
 .sd_lee {
-    background-image: url('../../static/image/character/sd_2.jpg');
+    background-image: url('..racter/sd_2.jpg');
     background-position: center;
     background-size: cover;
 }
 
 .sd_kim {
-    background-image: url('../../static/image/character/sd_3.jpg');
+    background-image: url('..racter/sd_3.jpg');
     background-position: center;
     background-size: cover;
 }
 
 .sd_hwang {
-    background-image: url('../../static/image/character/sd_4.jpg');
+    background-image: url('..racter/sd_4.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -441,16 +441,16 @@ modal.show가 불리면서 모달창이 켜짐*/
 /* 모달 내부 설정 */
 .modal-container {
     /* 종이 질감을 백그라운드에 넣음*/
-    background-image: url("../../static/image/source/old_paper.jpeg");
+    background-image: url("..rce/old_paper.jpeg");
     background-size: cover;
     color: dimgray;
     /* 보더라인에 액자 이미지를 넣음 (올드게임 스테이터스) */
     border-style: solid;
     border-width: 40px 40px 40px 40px;
-    -moz-border-image: url("../../static/image/source/border_image.png") 42 44 44 44 repeat repeat;
-    -webkit-border-image: url("../../static/image/source/border_image.png") 42 44 44 44 repeat repeat;
-    -o-border-image: url("../../static/image/source/border_image.png") 42 44 44 44 repeat repeat;
-    border-image: url("../../static/image/source/border_image.png") 42 44 44 44 repeat repeat;
+    -moz-border-image: url("..rce/border_image.png") 42 44 44 44 repeat repeat;
+    -webkit-border-image: url("..rce/border_image.png") 42 44 44 44 repeat repeat;
+    -o-border-image: url("..rce/border_image.png") 42 44 44 44 repeat repeat;
+    border-image: url("..rce/border_image.png") 42 44 44 44 repeat repeat;
     /* 모달을 페이지 가운데 올 수 있도록 비치*/
     position: absolute;
     width: 600px;

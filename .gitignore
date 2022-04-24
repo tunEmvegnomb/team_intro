@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 .idea/
-./static/.DS_Store
+templates/static/.DS_Store
