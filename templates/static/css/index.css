@@ -173,6 +173,11 @@ body {
     text-align: center;
 }
 
+.sizing{
+    width: 300px; height: 400px;
+}
+
+
 /* 멤버카드 이름 부문 */
 .name_member {
     width: 600px;
